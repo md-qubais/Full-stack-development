@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iframe1</title>
+  </head>
+  <body>
+    <!--here nested iframe if the iframe is same it will load only twice
+    means one for the document and second for the subdocument and that subdocument wont
+    load again if the iframe is of same type
+-->
+    <!--browser blocks recursion against iframes and it will that recursion will work
+only twice
+-->
+    <h1>Iframe1</h1>
+    <iframe height="800" width="800" src="./iframe2.html"></iframe>
+  </body>
+</html>

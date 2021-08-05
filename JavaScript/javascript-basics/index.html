@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Basics</title>
+    <script>
+        console.log("this is printed first");
+        alert("dont browse")
+        //what happens in case of alert 
+        //untill and unless the user doesnt click the rest of the 
+        //page rendering gets stop 
+        //the browser reads the html line by line and when it reaches
+        //the box than its shows alert till then untill the user doesnt
+        //clicks the page html rendering gets blocked
+        //click ok then the page get rendered and display
+
+        //if alert msgs in head than the body will not be rendered till the user
+        //clicks on it
+      </script>
+    <!--if we are wrinting script and linking the file than 
+    whatever javscript written inside the script will not be evaluated if src exits
+    
+
+     here below async means that the javascript file get downloaded
+     parallel while rendering html
+     and defer is the boolean value to show that browser must
+     execute the javascript file after the html is completely rendered
+     depends upon the browser 
+
+     actually javascript is intrepreted and concept like repl=>check the google hahaha
+     it exe line by line does not care about the next line until it get evaluated
+     open about:blank and write javascipt there in that console inpect
+    -->
+    <script async defer src="./script.js">
+        console.log("it wont get evaluated and it wont be printed")
+        //by wrinting the async defer the html page will get rendered while
+        //the javscript file get evaluated
+        //that means that the javascirpt execution get parallel while rendering the 
+        //html so the htmml rendereds at the background and then we get a msg
+        //that alert msg that agin dont browse depends upon the browser
+        //how much the page get rendered parallely while executing the javascript file
+    </script>
+
+
+  </head>
+  <body>
+    <h1>here the page loaded after user click ok on dont browse</h1>
+    <p>this is the paragraph that is rendered</p>
+    <!--there are many ways to write the javascript thta we can link script file in
+    the head element of the html
+
+    and we can write inside the boy using script tag
+    -->
+    <script type="text/javascript">
+      console.log("this is javascirpt and printed third");
+      //alert("dont do ")
+      //the output will be the script src first because it is first rendered
+      //and than it will print the this is javascirpt in the console in inspect section
+      //we can actually write window.alert()
+      //and we can also simply write alert()
+    </script>
+    <h1>here the page loaded after user click ok on again dont browse</h1>
+    
+  </body>
+</html>

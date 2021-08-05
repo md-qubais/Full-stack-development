@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+<body>
+    <h1>input elements</h1>
+    <!--here input element with type="text" and if we remove text than also
+        by default the element type will be text actually these are form elements
+        so currently we are not working with forms so we dont use form element or form tag
+    -->
+    <h3>enter text</h3>
+    <input type="text">
+    <br>
+    <!--here input type passowrd specifies that we are taking input some password
+        so it encrypts the password in dot format
+    -->
+    <!--while working in  password just type the password and than just right click
+        and use inspect than change that type from password to text than you can see that
+        password
+    -->
+    <h3>enter passowrd</h3>
+    <input type="password">
+    <br>
+    <!--here we have to type a proper email format text if the written text is not an 
+        email type than there wont be any form submission than it simply gives us red mark
+        that indicates that this email is not valid and we must enter a valid email
+        for validation it is useful
+    -->
+    <h3>enter email</h3>
+    <input type="email">
+    <br>
+    <!--it only takes number we can increase and decrease the number as per user wish-->
+    <!--we can alos set range min and min or min or simply max-->
+    <h3>enter number</h3>
+    <input min=100 max=200  type="number">
+    <!--the input type date follows the locale of the browser means the indian english 
+        format of the browser and we can just even change this type from date
+        to text in the browser by using inspect and than change its type from date to
+        text
+    -->
+    <br>
+    <h3>enter date</h3>
+    <input type="date">
+    <!--here below is the color picker if we are going to change its type from color
+        to text inside the browser than it will give the hashcode of that particular color
+    -->
+    <br>
+    <h3>choose color</h3>
+    <input type="color">
+    <br>
+    <!-- you can click and select a file and you can drag and drop the file into the 
+        browse button or choose the file button
+    -->
+    <h3>select the file</h3>
+    <input type="file" >
+    <br>
+
+    <!--here below are radio and checkbox and where is radio used and where is checkbox used
+        radio is when we  have to chose one of the many
+        and checkbox used to chose one or more than one
+    -->
+    <input type="checkbox">
+    <br>
+    <input type="radio">
+    <br>
+    <!--here this wont work properly because in checkboxes below work for multiple
+        selection that is right and in radion button also it will work for multiple
+        selection that is wrong because we are not providing them name so that it ways
+        it behaves rudely so we have to provide names for tham so that we can just 
+        selected one from many in radio buttons 
+        selected many from many in checkboxes
+    -->
+    <h1>check boxes and radio buttons is here</h1>
+    <input type="checkbox">A
+    <input type="checkbox">B
+    <input type="checkbox">C
+    <br><br>
+    <input type="radio">X
+    <input type="radio">Y
+    <input type="radio">Z
+    <br><br>
+    <!--here below provdoing same names in the radio leads to choosing or selecting
+        only one from many that is correct and providing same name in checkbox 
+        so we can select many from many that is also correct so we have to provide
+        names that must be same or unique in checkboxes and radio buttons for choosing
+        or selection
+    -->
+
+
+    <!--here by clicking on the checkbox associate text or name also we can select that
+        in the checkbox by attaching that label to the corresponding check box
+        for attaching a label we have to give id for that check box and we
+        have to use label as <label for="id_name">text</label>
+        here for means that label is going to attached for the given id in the 
+        for attribute
+    -->
+    <input id="a" name="select" type="checkbox"><label for="a">A</label>
+    <input id="b" name="select" type="checkbox"><label for="b">B</label>
+    <input name="select" type="checkbox">C
+    <br><br>
+
+    <!--and same functionality for label goes for even radio buttons also-->
+    <input id="s1" name="chose" type="radio"><label for="s1">monday</label>
+    <input id="s2" name="chose" type="radio"><label for="s2">tuesday</label>
+    <input name="chose" type="radio">wednesday
+    <br><br>
+    <!--there are some more form element that does not start with input-->
+    <!--below is the textarea we can write text here we can increase the size of it
+        we can give some default text
+    -->
+    <!--we can alos defint the max cols and max rows-->
+    <!--and here the textarea is very dynamic and it increases its size
+        if the text characters over shoot the cols and the rows
+    -->
+    <textarea cols="50" rows="4" >write here</textarea>
+    <br><br>
+    <!--here select specifies that its a drop down by clicking it we can select
+        some name text or value the default one is the first one option 
+        to be shown in the select and 
+        also we can select multiple by using the attribute multiple
+    -->
+    <select >
+        <option >qubais</option>
+        <option >imad</option>
+        <option >affan</option>
+        <option >hameed</option>
+        <option >mansoor</option>
+    </select>
+    <br><br>
+    <select multiple>
+        <option >qubais</option>
+        <option >imad</option>
+        <option >affan</option>
+        <option >hameed</option>
+        <option >mansoor</option>
+    </select>
+    <!--these above all are called form elements because the work in a very nice way
+        in the forms
+    -->
+    <!-- below is some example for the form submission
+        here we can open the icon board using window key + ;
+        and submit button submits the details to redirection given in action attribute
+        and reset button rests all the input of the form 
+    -->
+    <form action="https://google.com/search">
+        <input type="text" name="q">
+        <input type="text">
+        <input type="text">
+        <button type="submit">submit</button>
+        <button type="reset">❌</button>
+    </form>
+</body>
+</html>

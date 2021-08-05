@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media images,audio and video</title>
+</head>
+<body>
+    <h1>below is the image</h1>
+    <!--here src means the source of the pic where the pic has been stored 
+        or the complete link address of the pic from the internet
+        given the source of the image or the complete link/address of the image
+        here that img single sided tag img make sure that the given image path or the link
+        address image must be shown in the browser or if someone browser cannot show the 
+        image or if some ones browser doesnt support the image than alt attribute
+        makes sure that the given text must be visible instead of the image
+        and alt also uses that if someone is blind than with the help of screen reader
+        than it can read tha alt attribute assigned text to that blind person
+    -->
+    <!--if we are using just height than the width is default handled-->
+    <!--if we are using just width than the height is default handled-->
+    <img width="300" src="./Media/johncena.jpg" alt="photo of john cena">
+
+    <!--here below is the video element -->
+    <!--by default the video wont play we have to make sure the vedio plays
+    we have to play the video by right click and then play the vedio
+    and right click to show the controls because the controls are blocked
+    by default
+
+    so to make that video show correctly we have to add an attribute such
+    as controls in the video element
+    and we can also set the height and the width of the video element as weell
+
+    there is one attribute called auto play but mordern browsers
+    disable the funton of the autoplay and in some browsers it work
+    the autoplay works in some browsers just like mine but some
+    browsers disable the functionality of autoplay
+
+
+    here we can also set loop attribute as well if the video finishes once
+    then it will start again from the start
+
+    here preload is an attribute where we get three things to assing there 
+    auto
+    metadeta 
+    none
+    if prelaod = none than until and unless user is trying to play it 
+    the video does not reveal itself means no thumbnail and no video length nothing
+    what kind of video is nothing it wont load itself and if we play that video than
+    it laods itself
+
+    if preload= metadat than only the data about the vedio downloads or loads on the 
+    browser and the actual video does not load until and unless user tries to 
+    play the video
+
+    if the video is much larger or longer video than we should use metadata
+    that the user can understands that this type of the video is this and the 
+    its length if he wanted to play if he doesnt wanted to play than
+    the time complex increases to loads the longer video so we must use 
+    metadat in case of longer videos
+
+    if preload=auto that is the default one the video start loads or downloads
+    on the browser with its meta data
+
+    you can check everything on inspect and than network and cache
+
+-->
+    <video  preload="metadata" height="300" loop autoplay controls src="./Media/John cena entry scene whatsapp status-WWE Status Video(StatusMoj.In).mp4"></video>
+
+    <!--this audio element or the audio tag has the same functionalities as video element or video tag--
+        but without the height and width attributes
+        
+        >
+    <audio  controls src="./Media/john-cena-the-time-is-now-mymp3song-com-19031.mp3"></audio>
+
+</body>
+</html>

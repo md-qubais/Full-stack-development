@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+        here in css it will work fine because
+        acccording to the definition of id and class
+        id is one to one mapping and class will have many to many mapping
+        one element should have exactly one id and one id should associated to 
+        exactly one element
+        many elements can have same class and one class can be associated to
+        many elements
+        that above is the definition of the id and class
+        
+        spaces seperated in the class attribute will be considered as many different classes
+        such as ==> class="s1 s2 s3" ==> here s1 s2 and s3
+
+        spaces seperated in the id attribute will be considered as single id value
+        such as ==> id="s1 s2 s2" ==> here s1 s2 s3 is single id not three different
+
+        so what happens if we give same id to multiple elements
+        if we assign single id on multiple elements
+        css wont be that harsh it that css will be work on multiple elements 
+        as well but in the javascipt there is one method like
+        document.getElementbyId() then it will give some weird like thing
+        we dont know that which element of that particular id will that 
+        javascript method will be considered
+    -->
+    <h1 id="id1">qubaisuddin</h1>
+    <h2 id="id1">imaduddin</h2>
+</body>
+</html>

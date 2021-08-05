@@ -1,0 +1,111 @@
+.container{
+    margin: 50px;
+    height: 500px;
+    width: 600px;
+    background-color: aqua;
+    /* font-size:0  this means the spaces between the box will move away*/
+}
+/*
+if you are giving inline to box than you must write some text in them
+because they are inline they wont get any height and width of their own
+neither we can set their height and width without text if they are inline
+
+so for making box one after another given them as inline-block
+i didnt give them margin and nothing so why there is some space between them
+its because they are not totally inline element 
+there are inline block
+block takes entire string and inline will be one after another
+so that space states that these elements or the box or blocks are inline-blocks
+that you can put something beside that but not entire beside them we can put them
+after some space to show that they are inline-block
+
+and if we give them some border also they will be seperated by border pixels
+so if we put the font-size zero in the container than the space will move away
+
+the simple answer is to make div in html side by side then it wont give any default
+spacing
+simple answer 
+we are writing the divs one by one and making it as inline-blocks so it give some gap
+so write side by side it wont give any gap
+
+if some things occur like this such as default padding and margins in some of the
+browsers than we can do like padding=0 and margin=0
+*/
+.box{
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-color: blanchedalmond;
+    animation: bounce 2s infinite;
+}
+/*
+here below we can also write the timing function that 
+means how they behave ease-in something that we  will seeb below
+
+we can observe below here that there arriving and their comming back
+that all arrive at same time and all comes back at the same time
+but their speed time differs in the middle some goes fast
+some goest slow but their arriving and comming back time is same
+the time that they reach at the bottom is same
+the time that they reach at the top is also same
+
+ease-in that starts slow and ends fast
+ease-out that starts fast and ends slowly
+linear that moves at the constant speed
+by default the timing function that is used is ease-in-out
+goes slow and ends slow in between its fast
+means it starts slow becomes fast in middle and ends slow
+
+we can change their functionalaties in developer console
+of timing function we can select using inspect
+and in css we can change them by using the graph
+*/
+.one{
+    animation-timing-function: ease-in;
+}
+.two{
+    animation-timing-function: ease-out;
+}
+.three{
+    animation-timing-function: linear;
+}
+
+
+/*
+now here below is the animations
+we can create the animations using the @keyframes and give them some identifier such as 
+we are going to use bounce
+
+@keyframes bounce{
+    and here we write the functionality of them 
+    0%{
+    }
+    50%{
+    }
+    100%{
+    }
+    here above these percentage shows us that how the elements are going to function
+    if it is in 0% or 50% or 100%
+
+    this means animation 0% done now what we have to do
+    this means animation 50% percent done now what we have to do
+    this means animation 100% done now what we have to do
+
+
+    so in which class or id we have to perfomr that animation 
+    we must use animation in that class or id
+    and hit enter and write the keyframe identifier there and perform animations
+}
+*/
+@keyframes bounce {
+   0%{ 
+
+   }
+   50%{
+       transform: translateY(430px);
+   }
+   100%{
+       
+   }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <!--here below in the style element we can write the css
+    cascading style sheets which is used to style the html elements
+    or the styling the structure which is mainly used for styling
+
+    below we can directly select the element or tag
+    like this and we can style whatever we want
+
+    and we can also link the stylesheet that is css
+    and we can write entire css in different folder 
+    and instead of writing the entire css in the head section of html element
+    we can write the css in different file by linking that file to this html 
+    like below way
+    -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        div{
+            background-color: aliceblue;
+            font-size: 20pt;
+        }
+        p{
+            background-color: azure;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        this is div
+    </div>
+    <p>
+        this is paragraph
+    </p>
+    <h1>
+        This is the header h1
+    </h1>
+    <!--here below we can also style the element konw as inline css styling
+    like below 
+    this inline styling gets the first preferance if we write here 
+    the css will give first priority to inline styling rathar than header styling
+    or different sheet style linking
+    
+    -->
+    <h3 style="">
+        this is header h3
+    </h3>
+</body>
+</html>

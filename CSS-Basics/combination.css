@@ -1,0 +1,56 @@
+/*this combinator is known as the adjacent sibling selector
+this + combinator affects  p if and only if p  is directly next brother to h1
+or h1 and p are direclty adjacent to each ohter
+means there are h1 p p it will affect only to the first adjacent sibling
+that is only the first p for all h1 element in the viewport or the html file
+and both share the same parent
+and p must be present after h1
+*/
+h1+p{
+    background: brown;
+    color: blueviolet;
+    font-style: italic;
+    height: 15ch;
+    width: 15ch;
+}
+
+/*this combinator known as the descandants combinator
+selects all the elements that are descandants to the first element 
+means this combinators selectors all the p elements inside the div elements
+and this will select all the p elements inside the div
+and weathere there are directly childer to div or not but all the p that are 
+present inside the div will be selected for example:
+div contains h1 and that h1 contains section and that section contains p
+even that p will be also selected from this descandants selectors because
+the p is descandant to that div therefore all the p even there are present in 
+another element but that elements are present in the divs that all p are selected
+*/
+div p{
+    background: brown;
+    color: cadetblue;
+}
+
+/*below combinator is the general sibling combinator
+means all p after h2 will be selected not inside h2 ->this means h2 and p must be sibling
+all p after h2 means they must be of same parent and p that are present even if not directly
+but there  parent is same those wiull be affected for example:
+h2 element is there and after h2 there is div and after div there is p and after p
+this is h1 and after h1 there is div and after div there is p and p and p 
+all the p elements are selected through this combinator because all p are sibling to h2
+*/
+h2 ~ p{
+    color: darkblue;
+}
+
+
+/*child combinator >
+this combinator selects the directly children to the first element
+means the second element must be present inside the first element and it must be
+directly preent like 
+div contains h1 and h1 will be selected not like div contains h3 and h3 contains h1 that
+wont be affected
+*/
+div > h1{
+    background: orange;
+}
+

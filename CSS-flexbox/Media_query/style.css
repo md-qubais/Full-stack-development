@@ -1,0 +1,93 @@
+.box{
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    background-color: brown;
+    transition: 2s;
+}
+
+/*  if the media query condition satisfied than the css that is present
+inside the query will be added to the previous css which is currently applied
+or override the previous query if present
+
+it just check the width of the viewport
+viewport 
+*/
+
+/* if the pixel of the browser or the tab reduces its width from
+900px than the below media query will execute
+*/
+@media (max-width:1200px) {
+    .box{
+        height: 100px;
+        width: 100px;
+        background-color: orange;
+        transition: 2s;
+    }
+}
+
+
+
+@media (max-width:900px) {
+    .box{
+        height: 50px;
+        width: 50px;
+        background-color: blue;
+    }
+}
+
+/* if the pixel of the browser or the tab reduces its widht from
+600px than the below media query will execute
+*/
+@media (max-width:600px) {
+    .box{
+        height: 30px;
+        width: 30px;
+        background-color: bisque;
+    }
+}
+
+/* here the transition is taken from the parent css so wee need not to write the transitions
+while reducing widht so it shows some cool transition
+but what commin back so we dont have to write even while comming baack
+because the root css contains it and that tranistion will flow from root 
+to all the box/childeresn that have been used if some more css function is there
+above root that from root to that above css function there will be no transition
+*/
+
+/*  
+now what if the 600px writes first and the 900px is written next
+that means the 600px media query wont execute because basic css properties
+that the next overrides present but how come 900px overrides 600px
+
+that measn the width of the viewport or the page is less than 900px that is true
+and its also less than 600px that is also true both are true so which one the 
+css should apply the css simply applies the next one considering and overriding
+all the previous ones that is the css property
+
+
+if we are using the max width properties that must be return in descending order
+
+greater size should be first 
+step by step responsiveness actually works
+
+the websites must be work on both mobile and desktop
+
+so how to make mobile first and than desktop later
+here in inspect we have some icons for responsive web design
+here we can design as per our phone requirments
+here the ratio of the height and width in pixels are way more
+so that inspect icon gives us the considered ration to develop for the 
+mobile application so 356 X 812 that is the height and the width to develop
+in the web
+1px in css that is coresponds to 4 pixels in the phone would use
+tht is known as the scale factor
+*/
+
+/*  
+for mobile first approach write the min-width in the media query condition
+and than we order them in increasing order
+for desktop first approach write the max-width in the media query condition
+and than we order them in decreasing order
+we can use media query and and we can flex box and we can generate grid system with them
+*/

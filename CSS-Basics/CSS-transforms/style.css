@@ -1,0 +1,53 @@
+div{
+    margin: 10px;
+    background-color: blanchedalmond;
+    height:100px;
+    width: 100px;
+}
+/*
+here skewx means the x lines wont change and will be parallel
+to each other and the y axis lines will be skewed to left if positive
+or right if negative in degrees
+same goes for skewY only x axis moves
+
+and we can also skew multiple times we need as per the developers use
+if we wanted to make skew both of them by using just single css method
+skew which takes two parameter
+*/
+.s1{
+    transform: skewX(30deg) skewY(30deg) ;
+}
+.s2{
+    transform: skew(30deg);
+}
+
+/*
+now here we are going to look out for some of the rotations that we are going to use
+which are going to use for the rotation of the particular element
+*/
+.s3{
+    transform: rotateX(50deg);
+}
+
+/*
+now here we are going to see about the scale
+the scale just expands the size of the current element
+*/
+.s4{
+    transform: scale(1.5,1.5);
+}
+/*
+now here we are going to learn about the translations
+here below if first translated and than rotated
+if we write the rotate first than it first rotated and than again transformed
+depends which we have wrote first
+*/
+.s6{
+    transform:translate(45px,45px) rotate(30deg);
+}
+/*
+we can also translate them seperately by using translateX and translateY
+*/
+.s7{
+    transform: translateY(-60px) ;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS MORE</title>
+    
+    <!--inline styling get more preference and its get more prefered over
+    linking styling and head styling
+    and from linking styling and head styling which one css is written last
+    gets more priority or last written css is more preferred-->
+
+    <!--here below linking styling get more prefered because
+    it is writeen after head styling
+    if head styling is written after linking styling than that will be gets
+    more prioritize becase html and css are top to bottom which one is compiled
+    last get over preference
+    -->
+    <style>
+        /*
+        the universal selector in the linking styling will override
+        the universal selector
+        simply if the same selector uses multiple time that selector
+        will override the previous one 
+        in that case override means if inside of the contents of the 
+        same selectors match than inside contains will override not the entire
+        contents of selector
+        
+        if first selectors contains one styling that is not present
+        in all the next upcomming selectors than that styling will be applicable
+        in the web page that wont be deleted if some another same selector
+        override that then it changes if not it wont change
+        that means it only changes if the next selector overrides its contenet
+        
+        suppose below exaple::
+        *{
+            color:red;
+        }
+        *{
+            background-color:blue;
+        }
+        in the above case nothing will be overide because 
+        that is true that they are same selector written twice
+        but once the first styling is applied and in the second selector
+        there is no another styling applied to that same kind of content
+        so it wont go it will be presesnt and in this way no selector
+        will overide each other 
+
+        in another terms we are not overriding the selecotrs
+        actually we are overriding the inside content of the selecotrs
+        the contents that come after previouse content will be overrdie
+        based on the rule this rule: id > class > tag/element > *
+        only the inside contents will override 
+        */
+        *{
+            background-color: brown;
+        }
+        h1{
+            background-color: brown;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- id and class
+    id is used for 1:1 mapping 
+    means that single element can have only one id 
+    and single id must be used in only one element
+    multiple elements can have same class
+    multiple classes are used for same element
+    one element can have both class and id
+    but incase the element has both id and class
+    the id will get first preferance and it will get prefered over the class
+    that simnply means that the id is more preferreed over class
+    
+    
+    if there are class selectors and tag selectors than the class selector will be get
+    the first priority and it is preferd over the tag selector in css
+    and than the last one is the universal selector that will be get prefered over
+    and the priority goes in the below way
+    id > class > element/tag > * (where * applies to all )
+    and if there are same selector multiple times than the last written will be preferred more
+    because css compile from top to down and the recent compilation will be taken into consideratioon
+   
+    you can just see that the last written css will override all the previous css
+    by just clicking inspect and go to dom explorer and than go to 
+    that particular elements css and than check the previous one will be 
+    slashed and overriden and than the most recent one will be taken into consideration
+    
+    -->
+    <h1 class="s" id="id">this is header1</h1>
+    <p class="s1 s">this is para 1</p>
+    <!--inline styling get more preference and its get more prefered over
+    linking styling and head styling
+    and from linking styling and head styling which one css is written last
+    gets more priority or last written css is more preferred
+    -->
+    <h2 style="background-color: black;" class="s2 s">this is header h2</h2>
+    <div class="s3 s">this is div</div>
+    <h2 class="cl1" id="id1">this is header 2</h2>
+  </body>
+</html>

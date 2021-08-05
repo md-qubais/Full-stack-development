@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tables</title>
+  </head>
+  <body>
+    <!--we can create table using table tag-->
+    <!--but by default there are no borders but we can also
+    simply set the borders using border attribute
+    and cell spacing simply gives some spacing between the cells
+
+    and cell padding give some space inside the cell not inbetween the cells
+    but inside the contents of the cell from all the four directions by its default margin or size
+-->
+<!--align attribute specifies that where the entire table to be move
+either on the left size of the page or to the right side of the page or to the 
+center of the page
+
+align attribute simply aligns that inside content of that particular element 
+to our desired positon
+-->
+
+<!--one by one centering all the text inside the table data is the most
+time consuming process and its a bad programming practice to do everything inside 
+the html context so we need css to align all the text of table data in the center-->
+    <table align="center" border="2" cellspacing="2" cellpadding="10">
+      <!--we can create table rows using tr tag-->
+      <tr>
+        <!--we can insert the data into table using td tag-->
+        <!--here align attributes in the td element indicates that 
+        where the inside of that td element of the td tag should be moved
+        -->
+        <td align="center">Name</td>
+        <td align="center">Roll no</td>
+        <td align="center">college name</td>
+        <td align="center">year of passing</td>
+      </tr>
+      <tr>
+          <!--we have some attribute like colspan and rowspan
+            where the colspan=2 means that cell will take the space of 2 coloumns
+            where the rowspan=2 means that cell will thake the space of 2 rows
+        -->
+        <td colspan="2">mohammed qubaisuddin</td>
+        <td>17801A0587</td>
+        <td rowspan="2">shadan college of engineering and technology</td>
+      </tr>
+      <tr>
+        <td>mohammed abdul hameed</td>
+        <td>17081A030</td>
+        <td>shadan college of engineering and technology</td>
+      </tr>
+    </table>
+  </body>
+</html>

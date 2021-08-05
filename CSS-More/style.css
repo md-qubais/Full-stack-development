@@ -1,0 +1,26 @@
+div{
+    background-color: red;
+    height: 40px;
+    margin: 10px;
+}
+/*when some certain things happen in the page
+than like hover than we get the contents randered of hover in the html
+go to inspect and than go to the code right click it and we can see that
+right click and we can get that change that pseudo class 
+to hover actice what ever we wanted
+*/
+
+div:hover{
+    background-color: blue;
+}
+/*
+below are the type of selectors that we are going to get from specific types
+such as the we are onnly selecting the btn class from a particular set of elements
+shown below such as we are just selecting all the btn class from the divs
+*/
+div.btn{
+    background-color: orange;
+}
+h1.btn{
+    background-color: blanchedalmond;
+}

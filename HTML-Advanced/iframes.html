@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I_frames</title>
+  </head>
+  <body>
+    <!--
+        here below is the iframes means we can embed another html page to 
+        the current html page
+        that we can acheive through iframes and we can remove border 
+        by using frameborder=0 and we can give it some of the height and width
+
+        if we remove the iframe border that the users cant understand that 
+        this part of the page comes from other html file if we remove border
+        if we put border than it gives some hint that this part of the page
+        may be from any another page
+
+        iframes simply means a page inside a page
+
+        we can do many things using the iframes we can embed the youtube video 
+        and we can do lots of things like the github code
+        payment integration and many many things that we can do 
+        with the help of iframes
+    -->
+    <!--here below i have embeded that youtube video inside our iframe-->
+    <h1>IFrames</h1>
+    <iframe
+      height="400"
+      width="500"
+      src="https://www.youtube.com/embed/YOJf9dsPRbs"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+
+    <br />
+    <br />
+    <h1>IFrames</h1>
+    <!--here below we can assing target as the name of the frame
+    by using the name attribute in the iframe element instead of class or id
+    we can use name element in the iframe attribute and than in the anchor tag
+    or a element we can use that given links to open in the corresponding
+    iframe by using the target attribute and by assignuing the name of the 
+    iframe into that target attribute 
+
+
+    there are lots of websites for security reasons that dont open in the iframes
+    for example google in link.html will not be able to open in the iframes
+    so either we have to open that google.com in another page
+    or either we have to open that google.com in self page means current parent page
+    so there is an attribute target in the anchor tag self means current browser page
+    blank means new tab
+    parent means if we are using the iframes than the google.com wont be open in iframe that is self
+    than instead we have to use and assing either _blank to open in new tab or either _parent
+    to open completely in parent of that iframe it in this that parent is the current page
+    the parent of the link.html is the current page so the google.com will open 
+    completely in the current page    
+-->
+    <h1>Opne in frame :</h1>
+    <ul>
+      <li><a target="frame1" href="./links.html">links.html file</a></li>
+      <li>
+        <a target="frame2" href="./inner_links.html">inner_links.html file</a>
+      </li>
+    </ul>
+    <!--here go to links.html file change that to _self,_blank and _parent 
+    and see what happens
+    in case of parent if there is no parent the current href will open
+    that web page inside the current page
+
+
+    if we are going to add the same current page in the iframes than
+    we are going to achieve recursion through it
+-->
+
+    <!--we can access the immediate parent using _parent and assigning that _parent
+directly to the target and we can assign the top most parent or root or ancestor
+using _top and assigning that _top to that target  but we cannot assign the middle one just like the binary trees concept
+-->
+    <iframe
+      name="frame1"
+      height="400"
+      width="400"
+      src="./links.html"
+      frameborder="1"
+    ></iframe>
+    <iframe
+      name="frame2"
+      height="400"
+      width="400"
+      src="https://example.com"
+      frameborder="1"
+    ></iframe>
+  </body>
+</html>

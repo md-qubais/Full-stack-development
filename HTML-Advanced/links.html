@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyper links</title>
+  </head>
+  <body>
+    <h1>Anchor Links</h1>
+    <!--here the a element or the anchor tag a just redirects us to the 
+    page that have been gicen in the href attriubte
+    basically we just proivde the respect link in the href attribute that just
+    refers to the link given in the href attribute and redirects us to the 
+    provided link and we can set any link and we can map that link to some name
+-->
+    <h1><a target="_parent" href="https://google.com">go to google</a></h1>
+    <!--here below we can also give our own created .html link name like ./inner_links.html
+as the link in the href which currently tells us that the inner_links.html file is 
+present in the current directory and just redirect there these type of links are known
+as the relative links
+-->
+    <h1><a href="./inner_links.html">go to inner links</a></h1>
+
+    <!--here below by using the target attribute and assigning _blank to the target
+    to target attribute just opens up the target or we just redirected to the given
+    link by the new tab means there is just new tab popped up and then we are redirected
+    to the provided link
+-->
+    <h1>targets</h1>
+    <h1>
+      <a href="./inner_links.html" target="_blank"
+        >go to inner links in new tab</a
+      >
+    </h1>
+    <!--By default the href is _self
+       below are the properties that we can use in the target
+       target
+       Where to display the linked URL, as the name for a browsing context (a tab, window, or <iframe>). The following keywords have special meanings for where to load the URL:
+           _self: the current browsing context. (Default)
+           _blank: usually a new tab, but users can configure browsers to open a new window instead.
+           _parent: the parent browsing context of the current one. If no parent, behaves as _self.
+           _top: the topmost browsing context (the "highest" context that’s an ancestor of the current one). If no ancestors, behaves as _self.
+        
+        -->
+  </body>
+</html>

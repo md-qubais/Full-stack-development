@@ -1,0 +1,33 @@
+/*
+here below just writing margin means it will give some margin
+from top bottom left and right from all the sides to that box class
+*/
+
+/*
+in margin we will get the color of our parent in the directions area
+in padding we will get the color of our own in the directions area
+*/
+/*
+now you can observe here the padding is inside the border 
+and the margin is outside the border
+*/
+.box{
+    margin:20px;
+    padding: 10px;
+    border: solid black 1px;
+}
+/*
+here below the border or the given margin wont get any color
+the inside contents of the div get color
+
+simply means that the margin area get the color of the parent element
+*/
+#div1{
+    background-color: lightgreen;
+}
+#div2{
+    background-color: lightsalmon;
+}
+#div3{
+    background-color: lightcyan;
+}

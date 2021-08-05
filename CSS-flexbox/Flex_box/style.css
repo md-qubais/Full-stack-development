@@ -1,0 +1,143 @@
+.container{
+    height: 400px;
+    width: 400px;
+    background-color: bisque;
+    /*
+    here by writing flex we can just adjust all the .items
+    within the .container in the form of flex
+    but they are trying to get in the single row thats why they are in
+    congested manner the items are not wrapped
+
+    so we have to write wrap to adjust them accordingly
+    */
+    display: flex;
+
+    /*
+    by wrting the flex-wrap wrap they adjust the items accordingly
+    */
+
+    /* till now here there is only one container that only one container that 
+    contains flex box or flex container ==> the entire container is known as the flex box
+
+    and what happens if I copy the same container and and write twice in html
+    */
+    flex-wrap: wrap;
+    /* 
+    now if we add another .container and than we check it will 
+    show next to the first one so according to the def of div its blocks
+    then we are converting to it into flex than in flex also there are inline 
+    and blocks 
+    so we must write display:inline-flex to display multiple flex to one another
+    */
+    display:inline-flex;
+    /* it have sosme space if we default to show that they both are some of the 
+    and another flex boxes so they get some default space */
+    margin: 10px;/* some margin to differentiate them */
+    /*here below  we can even change the directions of the appreances of the flex boxes
+    that how we are appeared i mean from row left to right or colmn top to bottom
+    just like below 
+    that default one is row
+    */
+    flex-direction: row;/* this one is default one */
+    
+    /*flex-direction: row-reverse; /* right to left */
+    
+    
+    /*there are total four direction we can layout col col-reverse and row and row-reverse */
+    /* means total 8 directions if we start from every 4 corner
+    these all are acheive using two parameters wrap and direction
+    */
+    
+    
+    /*flex-wrap: wrap-reverse;
+    /*flex-direction: column;
+
+    /*now the important part is alignment
+    the first thing that come is justify content  along main axis how things are aligned
+    this is the alignment within the row
+    so for each and every row by row it is applicable
+
+    how items within the row are aligned
+    */
+    justify-content: end;/* all the contents are stuck towards end means sigle row to end*/
+    justify-content: center;/* all the contents are stuck to the center means single row to center */
+
+
+    /* align items are basically used when the heights or widths of the multiple
+    items are different so we can align items means the inside content of the item
+    to be aligned in some format
+
+    see in flex box 2
+    */
+    align-items: baseline;/* all the items or text each row by row will be on same row-line if row or row reverse
+    and all the items or the text will be in same col-line if col or col reverse
+    */
+    align-items: center;/* all items will be centered */
+    align-items: flex-end;/* all items end will be in same axis depending on flex direction */
+    align-items: flex-start;/* all items start will be in same axis depeding on flex direction  */
+    align-items: baseline;/* items are aligned in such a way that the inside context
+    of row or col depennd upon flex-direction are in single axis or on same axis
+    */
+
+    /* Now align-content;  
+    it aligns the enitre set of items not just row by row or colo by col
+    just entire set of items it will align how we want
+
+    the default one is space-around
+    */
+    align-content: flex-end;/*it will align all the items to the end of flex box*/
+    align-content: flex-start;/*it will align all the items to the start of the flex box*/
+    align-content: space-around;/*  space distributed equally among them and have same space fomr top and bottom and left and right*/
+    align-content: space-between;/* first and last row at the edges and all the space is distributed amoong between items  */
+    /* now here below if we wrtie justify-content like this */
+    justify-content: space-around;/*  the space between left and right of last row
+    or if there are any space excess in anyrow mostly the last row 
+    it applicable only for the last row or the excess space have given to last row
+    then it is applicable
+    each items left and right spaces will be same
+
+    see first right and last left space are same and
+    every space in between the two itens if divided by that line
+    and compare that divided left and right space to the first right space and last left
+    will be same thats space around 
+    */
+    justify-content: space-between;/* this means the last and the first item are in the end
+    and space between middle ones left and right and last right , starts left are same and
+    have same spacing for every row
+    */
+    justify-content: space-evenly;/* it provides exactly the same space
+    between each item left and right space of each item of every row are same
+    every left and right space of each item is same
+    */
+
+    justify-content: center;/* justify works row by row */
+    align-content: center;/* align work entirely for every row */
+    align-items: flex-end;/* align items within the row perpendicularly
+    means all the end of the items are in same axis 
+    */
+    align-items: flex-start;/* all the start of the items are in the same axis */
+    align-items: center;/* all the items are adjusting themselves in the center position
+    of some items have height greater to some another items the one whihc 
+    has height greater will be centered accordingly
+    */
+}
+.item{
+    height: 50px;
+    width: 50px;
+    font-size: 20pt;
+    background-color: aqua;
+    border: solid black 1px;
+    /* margins to seperate them or to differiantiate the boxes */
+    /* if we remove the margin below than there is no space between
+    divs anymore because it is flexbox itetm
+    using flex box advantages
+    if it was not flex box writing div below div will give us some default spacing
+    that we have to remove by writing the divs one after another
+    */
+    margin: 10px;
+    /*below here for aligning the text in center*/
+    text-align: center;
+    padding-top: 10px;
+}
+
+

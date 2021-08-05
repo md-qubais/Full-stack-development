@@ -1,0 +1,71 @@
+/*
+box shadow where the first 10px is for x axis and second is shadow in y axis
+we can also put negative value which goes for negative x axis and negative y axis
+means the first parameter for the bottom shadow 
+and the second parameter for the straight shadow
+we can change the shadow in many ways
+
+annd the third parameter is for the bluring of the shadow
+
+this transition 1s means every things in css will change in the span of one second
+like hovering and clicking/active
+
+every change that we are going to change while we are doing anythings for changing
+that css in if we write the transition in that things than for hover or active
+or anything it will take given time to change thigns means it will change slowly
+infront of our eyes
+*/
+.btn{
+    margin: 100px;
+    margin-left:500px;
+    margin-top: 200px;
+    background-color:wheat;
+    color: white;
+    font-size: 30pt;
+    padding: 50px;
+    width: 200px;
+    box-shadow: gray 10px 10px 10px;
+    transition: 1s;
+}
+
+/*
+we can also write different times for different transitions such as
+transition: transform 2s, box-shadow 1s
+this above means that the transform will take plave in 2seconds and the box-shadow comes before
+transition that is 1second ==> 1s
+
+
+here when we write transition in just div.btn class that means 
+all the changes going from that div.btn class will take transition time
+slowly it will changes depends upon the time
+so when hover encounters than it takes the transition time from div.btn and 
+according to the time it changes its state
+and when active enounters it takes the time from transition which is present in hover
+because the current state is hover so it takes that transition time and than
+change according to it now here is the maain point after we release the cursor
+than it will come back to its original state that is div.btn state then
+
+this simply means that for from current state to next state it will take this much 
+transition time
+
+at returning time the given same transition time applied
+
+this above just simply means and look at thsi point only
+the current css will be renderd in the give time
+trasnition time that means if the div.btn hover takes transition time of 0.2sec
+if we doestn gibe them transition time then the div.btn will take transsition
+time from div that is so ssimlple
+and when we remove the cursor than the original div will be randered based
+on the given transition time of it
+*/
+div.btn:hover{
+    box-shadow:gray 20px 20px 10px ;
+    transform:  rotate(360deg);
+    transition: 1s;
+}
+div.btn:active{
+    color: white;
+    background-color: antiquewhite;
+    transform: rotate(360deg) translate(30px,30px) ;
+    box-shadow: gray 0px 0px;
+}

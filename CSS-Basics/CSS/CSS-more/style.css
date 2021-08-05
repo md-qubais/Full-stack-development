@@ -1,0 +1,65 @@
+/*
+universal selector
+*/
+*{
+    background-color: darkblue;
+    color: red;
+}
+/*
+element selector or tag selector
+*/
+div{
+    font-size: 10ch;
+}
+/*
+class selector
+*/
+.s{
+}
+.s1{
+    background-color: rosybrown;
+}
+.s2{
+    background-color: royalblue;
+}
+.s3{
+    background-color: slateblue;
+}
+/*
+this is know as the id selector
+*/
+#id{
+    background-color: chartreuse;
+}
+/*
+this css which is written before that is been rendered and that is taken into consideration
+because the css follow top tp bottom approach
+*/
+
+
+/*
+but incase the element has both id and class
+the id will get first preferance and it will get prefered over the class
+
+that simnply means that the id is more preferreed over class
+*/
+#id1{
+    background-color: black;
+}
+#id1{
+    background-color: darkblue;
+}
+.cl1{
+    background-color: orange;
+}
+/*
+if there are class selectors and tag selectors than the class selector will be get
+the first priority and it is preferd over the tag selector in css
+and than the last one is the universal selector that will be get prefered over
+and the priority goes in the below way
+id > class > element/tag > * (where * applies to all )
+and if there are same selector multiple times than the last written will be preferred more
+because css compile from top to down and the recent compilation will be taken into consideratioon
+
+*/
+

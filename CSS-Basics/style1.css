@@ -1,0 +1,81 @@
+/*
+this selector is konw as the global selector
+where the css code present in that selector will be applied to each and every
+tag or the element in the web page of html or of html 
+universal selectors
+*/
+*{
+    font-size: 3ch;
+    color: royalblue;
+}
+/*
+this will just work on the divs first
+the universal selector will be applied of the divs and p tags or elements
+then the respect tag selector will be applied on that corresponding divs and parags tags/elements
+type selectors
+*/
+div{
+    background-color: salmon;
+}
+p{
+    
+    background-color: teal;
+}
+
+/*
+now here comes the class selector which can be accessed through . operaotr
+the single element or tag can have multiple class but can have only single and unique id
+where id is unique and many element can have same ids but only one not two
+class selectors
+*/
+.bold{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.black{
+    background-color: black;
+    font-size: 3em;
+}
+/*ids are selected by # symbol
+id selectors
+*/
+#blk{
+    background-color: black;
+}
+
+input{
+    font-size:2ex;
+    color: black;
+}
+
+/* here below is the attribute seletor of a particular tag or element
+we can select a particular attribute from a given tag or element
+if there are multiple tags contains same attribute we can also check
+and do css on the basis of its attribute value shown below
+attribute selectors
+*/
+input[disabled]{
+    color: blue;
+}
+input[type]{
+    color: orange;
+}
+input[type="text"]{
+    color: purple;
+}
+input[value="write here"]{
+    color: red;
+}
+
+/*
+here wa can also select that tag or input element and do some styling when in hover or in active
+mode
+*/
+
+input:hover{
+    height:6ch;
+    width: 6ch;
+}
+input:active{
+    color: blueviolet;
+    font-style: italic;
+}

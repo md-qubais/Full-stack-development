@@ -1,0 +1,66 @@
+div.game{
+    margin-top: 100px;
+    margin-left: 200px;
+    height: 600px;
+    width:1100px;
+    background-color: aquamarine;
+}
+h1{
+    margin-left: 500px;
+}
+div.enemy{
+    display: inline-block;
+    margin: 10px;
+    height: 70px;
+    width: 70px;
+    background-color: bisque;
+    animation: bounce 2s infinite;
+}
+/*
+if we are using the translation to move the enemies starting postion 
+then when they are bouncing they will come to its original starting position
+so use margins to move them they will parmanently in that x axis or y axis direction
+or else we have to give every ememy an another keyframe
+*/
+
+
+
+div.e1{
+    margin-left: 200px;
+    animation-timing-function: ease-in;
+}
+div.e2{
+    margin-left: 150px;
+    animation-timing-function: ease-out;
+}
+div.e3{
+    margin-left:300px;
+    animation-timing-function: ease-in-out;
+}
+/*
+div.e1 will get more priority than .e1 or just div
+*/
+div.player{
+    height: 70px;
+    width: 70px;
+    border: solid gray 1px;
+    margin-top: 180px;    
+    margin-left: 2px;
+    background-color:goldenrod;
+    border-radius: 50%;
+    animation: move 5s infinite;
+    animation-play-state: paused;
+}
+.game:active .player{
+    animation-play-state: running;
+}
+@keyframes bounce {
+    50%{
+        transform: translateY(515px);
+    }
+}
+@keyframes move {
+    50%{
+        transform: translateX(1020px);
+    }
+}

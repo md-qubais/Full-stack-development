@@ -1,0 +1,231 @@
+div.container{
+    height: 600px;
+    width: 600px;
+    /*background-color: bisque;
+    */
+    margin: 10px;
+    padding: 10pz;
+}
+div.item{
+    height: 80px;
+    width: 80px;
+    font-size: 20pt;
+    background-color:brown;
+    margin: 10px;
+}
+
+/*  
+relative -> from its original position
+absolute -> from its parent position from the top left corner of its parent
+
+*/
+
+
+.one > .four{
+    background-color: chocolate;
+    /* the position relative is same as the postion static but nothings changes
+    now adding left to css means
+    some effect will occour on that item
+    means the current box will shift right from its current position
+    means from left to right 10px it moves
+    that is the meaning of that left
+
+    it changes from originial to some position
+    if its relative by using properties like left,right bottom and top
+    left and right means css will override the prerviuos properties
+    
+    */
+    /* if the below posittion is static it wont change a bit either we
+    give properties left,right,top or bottom
+    */
+    position: relative;
+
+
+    position: absolute;/* it changes its postion fromm it parent and the
+    next item will takes its position which one if after it
+    means that all the next one container will be shifted as we haave seen shifting in array
+    relieving all their original position and making the last empty
+    
+    */
+    /* here its not overriding it just taking the precednec means
+    the left is taking precedence over right
+    */
+    left: 100px;
+    right: 10px;
+    /* and here top takes precedence over bottom  */
+    bottom: 100px;
+    top: 100px;
+}
+
+
+/* now by writing this the 5 will comes up on four because we are 
+rendering it after we renders the 4 means we are writing css of 5 after 4 means
+that 4 will exe first than 5
+
+now they both are in the same position and the 5 in on the top of 4
+now if you scroll the page down the page will scroll down but the 5 which was fixed
+will follow with the scroll means it is fixed on the page it will come and goes up
+when we scroll following the scroll of the page
+
+just scroll and see
+
+meanns that 5 is fixed with respect to the window
+*/
+
+.four > .five{
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    background-color:white;
+}
+.three > .five{
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    background-color: blue;
+}
+
+
+.one > .five{
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    background-color: orange;
+}
+
+/*  the above both are fixed to the window means their left,right,top and bottom
+are arranges according to the window not by its position thats the main thing
+
+
+the one that is last in the html will come all the top in the css as shown above
+*/
+
+
+/*   
+now here comes the proiperty of the position:sticky
+that means below here
+*/
+
+
+
+.one > .three{
+    position: relative;
+    z-index: 2;
+}
+
+.one > .six{
+    position: relative;
+    z-index: -2;
+    background-color: orange;
+}
+/* see the container will go below 3 but above 6 because of the zindexed
+of the above .three and .six
+and below .two
+*/
+.container > .two{
+    /* zindex is negative means it is lower in order of showing in the page
+    means if the container will have zindex of 2 
+    and the item two will have zindex of 3
+    and the iten 3,4,5 will have zindex of 5
+    means that naturally the item two will visible over container
+    because it have more z index and 
+    when it goes down than the item two will go inside or back of the 
+    items 3,4,5 because they have more zindex 
+    try yourself by using all the z index
+    */
+    z-index: -1;/* we cant able to see it if we remove the background color
+    than we can see it because it is now gine inside div container
+    below the div or parent
+    now because it is sticky and no background we can just
+    see this
+    but when we scoll down it because if it violates left,right,bottom or top
+    then it some another item comes up in its way
+    than it will goes down means that item will comes up and 
+    that zindex item will go inside that next item and it vaniesh till
+    that next item is removed from that window
+    see yourself
+    2.1 will go inside 3 unvisible
+    than get visible and than again go inside 4
+
+
+    */
+    /* now here we write the postion sticky*/
+    position:sticky;
+    /* here nothing happes becauses we area not moving it means
+    we are not giving and top,left,right or bottomw so nothing happens
+    what if we give top:10px;
+    some really intresting happens here lets us see what will happen
+    */
+    top:50px;/* by default the sticky is same as static 
+    but if it violates this constraints than it will stick to the current page
+    or the current window 
+    sticky is the combination of relative and fixed together
+
+    if it violates this contraints than it is fixed
+    it will never go from the top 50px
+    as soon as it is top 50px than it will get fixed to the current top 50px
+    it will never go beyound that
+    */
+
+    /* so what happens is while we are scolling down or moving the document of the page
+    web page up down when the item  is away from the top to 10px from the window
+    it get stuck to the window means
+    when we are moving the page down after moving the page 10px away from the 
+
+    means from top if there are 50px after getting top 50px of the current window
+    it will get stuck or stick to that place in the current window
+    */
+    bottom: 50px;/* here we have two contraints just check the browser 
+    what will you observe
+    */
+    background-color: orange;
+}
+
+
+/*  that means of the nth child means
+for every 5 item this css is applicable
+for every 5 item in a particular div
+
+or that item or anything that we are applying to that 
+css must be its sibling not nexessarly adjacent sibling but
+it must be sibling
+
+*/
+.item:nth-child(1){
+    background-color: yellow;
+}
+
+.container:nth-child(2n){
+    /*background-color: aqua;*/
+}
+
+
+/*
+position: static ==> by default it is static and no changes will happens even if we 
+perform some changes such as top,left,right and bottom
+
+position: absolute ==> here we can perform changes but it will happend from
+the prospective of its parent means from the top left corner of it parent html
+incase no parent than the viewport is its parent operations like left,right,top and bottom
+and while changed if next element can be fit  in that place it gets fit
+means like if it is move far away from the current position according to its parent element top left
+the next element which is present in the html will get shifted to it postion
+like shifting the array
+
+position: relative ==> here we can pefromm changes but it will happen only
+from the current position of that element or that item means it will change the postion
+itself from its current axis not from its parent and not another element will takes
+its place if it is moving far away from its place than no another element will takes
+it place and tbat space will be empty
+
+position: fixed ==> it performs changes from the viewport point of view
+and it gets fixed in that postion no matther what we does scroll down or up
+it will be always fixed it to that position
+
+position: sticky ==> it perfomr changes from its current position means current axis
+if and only if it violates top,left,right and bottom
+
+z-index ==> this means that which elemnent or the class or the id should
+have the highest or the lowest rate of visibility
+
+*/

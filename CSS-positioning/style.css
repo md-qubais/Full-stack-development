@@ -17,7 +17,6 @@ div.item{
 /*  
 relative -> from its original position
 absolute -> from its parent position from the top left corner of its parent
-
 */
 
 
@@ -41,7 +40,11 @@ absolute -> from its parent position from the top left corner of its parent
     position: relative;
 
 
-    position: absolute;/* it changes its postion fromm it parent and the
+    position: absolute;
+    /*even if moves just one pixel the next containers  or items will takes
+    its place
+    */
+    /* it changes its postion fromm it parent and the
     next item will takes its position which one if after it
     means that all the next one container will be shifted as we haave seen shifting in array
     relieving all their original position and making the last empty

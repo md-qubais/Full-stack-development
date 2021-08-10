@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript higher order functions</title>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <h1>Javascript higher order functions</h1>
+    <input type="text" id="namebox">
+    <!--if we are using getName() (passing funciton call means passing the parameter which is returned by getName()) here than we have to use name in the G1 and G2 function-->
+    <!--if we are using getName(passing fucntion as a paramter to G1 and G2) than we have ti use name() (because we have passed function now we have to call that function because name is now a function ie variable acting as a function and we have to call name() to get what name function is returning) in G1 and G2-->
+    <button onclick="G1(getName())">Good Morning</button>
+    <button onclick="G2(getName())">Good Evening</button>
+</body>
+</html>

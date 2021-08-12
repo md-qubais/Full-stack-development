@@ -106,3 +106,53 @@ console.log(typeof bool)//boolean
 //prototype is by default present in javascript
 //that shows the current blue print of the object
 //and __proto__ just  a point points to where the current object or current things was inherited
+
+
+
+let str1="this is string"
+console.log(str1.charAt(0))//t
+console.log(str1.charAt)//function undefined
+let str2="this is also a string"
+console.log(str2.charAt(0))
+console.log(str2.charAt)//function undefined
+
+console.log(str1.charAt == str2.charAt)//this is true
+//how because they both are indirectly or directly inherited from String.prototype
+//from single String.prototype these both are inherited mean that charAt function
+//is present in String.prototype that both are inherited so therefore its give output
+//true because both are actually the same function inside String.prototype
+
+str1.charAt=function(){return 'x'};//doesnt make any change we cant just override
+//the functions of any primitive prototype such as String.prototype or Number.prototype
+//so they both charAt is present in 
+//str1.__proto__.charAt and str2.__proto__.charAt they both are same
+//because str1.__proto__ is String.prototype or str2.__proto__ is String.prototype
+//like in java we cannot override final class or final methods in java 
+
+//we just cant change in str1.charAt or str2.chatAt
+//but we can change in String.prototype.charAt in actual object
+
+String.prototype.charAt=function(){return "qubaisuddin"}
+console.log(str1.charAt())
+console.log(str2.charAt())
+console.log(String.prototype)//here we will get the inbuilt function of Strings
+//like split splice 
+//charAt concat and all those stuff
+//Same goes for Number.prototype and all inbuilts functions are present inside the
+//Number.prototype
+
+Array.prototype.joinOriginal=Array.prototype.join
+//here above we are creating a new varible and assigning the reference of join function
+//that is present inside the Array.prototype
+//now here below i am overriding the join function like this in Array.prototype
+Array.prototype.join=function(){
+  console.log(arguments," "," joining to"," ",this)
+  return this.joinOriginal(...arguments)//here we are using this for calling current object
+}//...arguments means we are spreading arguments
+let array=[1,2,3,4];
+console.log(array.__proto__==Array.prototype)
+console.log( array.join(',',';','qubais'))//here we are joining the entire array with comma separated
+//you can give how much you wanted but it is only applicable to the first argument
+
+
+

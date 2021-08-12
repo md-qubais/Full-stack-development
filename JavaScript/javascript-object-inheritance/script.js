@@ -129,10 +129,16 @@ console.log(Obj2.a)
 console.log(Obj2)//now here in Obj2 representation of Obj2 we will get addititional 
 //varible a
 let Obj3=Object.create(Obj2)
+console.log(Obj3.b)//we will get b from Obj1 because b is also not present in Obj3 and Obj2
+//means its present in Obj2 but not physically actually it is present only in Obj1
+//it will check in Obj3 if not than Obj2 if not it will check in Obj1
 console.log(Obj3.a)//here we will get a from Obj2 not from Obj1
 //because the a that is present in the Obj2 shadowed the a present in Obj1
 //means if the class doesnt contain any varible it will check in its super class
 //and if not again in super class of its super class __proto__ and it goes on
 //till it becomes null
 
+//in object prototyping or inheritance chain the subobject is not acquiring any properties
+//or memeber of the parent or super object it just check in the parent/super object
+//to get the property that is not present inside the current object usisng __proto__
 

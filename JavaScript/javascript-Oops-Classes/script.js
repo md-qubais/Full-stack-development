@@ -146,7 +146,10 @@ Array.prototype.joinOriginal=Array.prototype.join
 //that is present inside the Array.prototype
 //now here below i am overriding the join function like this in Array.prototype
 Array.prototype.join=function(){
+  //this because we are calling via object
   console.log(arguments," "," joining to"," ",this)
+
+  //here below this means to the current via calling object we must join the provided arguments
   return this.joinOriginal(...arguments)//here we are using this for calling current object
 }//...arguments means we are spreading arguments
 let array=[1,2,3,4];
@@ -155,4 +158,20 @@ console.log( array.join(',',';','qubais'))//here we are joining the entire array
 //you can give how much you wanted but it is only applicable to the first argument
 
 
+//refer below how the Array.prototype goes
+/*
+Array.prototype   //basically its is one of the object
+{
+  join:function(){do something its original},
+  joinOriginal:function(){same as join just we passed join function here} 
+  //here above we created joinOriginal function using Array.prototype.joinOriginal = Array.prototype.join
+
+
+  join:function(){
+  console.log(arguments," "," joining to"," ",this)
+  return this.joinOriginal(...arguments)//here we are using this for calling current object
+}//here we just override the join function of Array.prototype
+by just using Array.prototype.join=Array.prototype.join=function(){console.log(arguments," "," joining to"," ",this)return this.joinOriginal(...arguments)//here we are using this for calling current object}
+}
+*/
 

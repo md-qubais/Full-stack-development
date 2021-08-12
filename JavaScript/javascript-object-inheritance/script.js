@@ -56,6 +56,7 @@ console.log(false=="false")//if left side string and right side boolean
 console.log(""==false);//true because type cast both to zero
 
 
+//every space ie tab\nextline\simnple_space in javascript when converted to number is zero=>0
 //\t==0
 //\n==0
 //' '==0
@@ -110,4 +111,28 @@ obj2.a -->it will try to find in obj2
 //and it is different from obj1.a check and observe and write
 //and what changes will happen in obj3 check all
 //this above all known as the prototype based inheritance
+let Obj1={
+    a:10,
+    b:20,
+}
+console.log(Obj1)//object representation of Obj1
+let Obj2=Object.create(Obj1);
+console.log(Obj2)//object representation of Obj2
+//but Obj2 is empty becuase it doesnt contain anything of itself
+console.log(Obj2.a)
+console.log(Obj2.b)//but it will get all the meneber of Obj1
+Obj2.a++
+//now Obj2.a++ means Obj2.a=Obj2.a+1;
+//a new memeber will get allocated in Obj2 that is a and that current
+//a value will be the a from Obj1 + 1
+console.log(Obj2.a)
+console.log(Obj2)//now here in Obj2 representation of Obj2 we will get addititional 
+//varible a
+let Obj3=Object.create(Obj2)
+console.log(Obj3.a)//here we will get a from Obj2 not from Obj1
+//because the a that is present in the Obj2 shadowed the a present in Obj1
+//means if the class doesnt contain any varible it will check in its super class
+//and if not again in super class of its super class __proto__ and it goes on
+//till it becomes null
+
 

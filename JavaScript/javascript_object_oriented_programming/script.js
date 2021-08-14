@@ -83,3 +83,30 @@ Student.prototype.isAdult=function(){
 console.log(student.isAdult())
 
 console.log(JSON.stringify(student))//gives complete representation of that object
+
+
+
+
+let array=[1,2,3,4];
+let obj={
+    a:10,
+    arr:[],
+    obj1:{
+        name:"quabisuddin"
+    }
+}
+console.log(typeof array)//object
+console.log(typeof obj)//object
+
+//but array.__proto__ is not equals to Object.prototype
+//its equals to Array.prototype
+
+console.log(array.__proto__==Array.prototype)
+console.log(obj.__proto__== Object.prototype)
+console.log(obj instanceof Object)
+console.log(obj.a)//10
+delete obj.a;//here we ahve deleted the property of an object
+console.log(obj.a)//undefined\
+for(let i in obj){
+    console.log(i)
+}

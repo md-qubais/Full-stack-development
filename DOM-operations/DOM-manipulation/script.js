@@ -74,8 +74,11 @@ while((childs.length > 0)){
     for(let i of childs){
         console.log(i)
         if(i.innerText=="qubaisuddin"){
+            let element=document.createElement("li")
+            element.innerText="qubais software engineer"
+            console.log(element)
             list.removeChild(i);
-            bool=true;
+            list.appendChild(element)
         }
     }
     if(bool==false){

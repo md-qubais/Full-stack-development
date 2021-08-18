@@ -100,3 +100,6 @@ interval_id=setInterval(function run(){
         clearInterval(interval_id)
     }
 },1000)
+
+
+console.log(document.querySelector("qubais"))

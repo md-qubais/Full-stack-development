@@ -110,3 +110,23 @@ console.log(obj.a)//undefined\
 for(let i in obj){
     console.log(i)
 }
+
+
+let arr1=[1,2,3,4]
+let arr2=new Array(arr1)//create an array within that array the 0th index will be
+//inserted this valye arr1 that is entire array
+console.log(arr1)
+console.log(arr2)
+console.log(arr1.__proto__==Array.prototype)
+console.log(arr2.__proto__==Array.prototype)
+console.log(arr1==arr2[0])
+
+let arr3=new Array(4)//create length 4 empty array
+let arr4=new Array('4')//create array of oth index value is '4'
+
+console.log(document.querySelector("h1"))//gives the first h1 element
+//document.querySelectorAll("h1") gives us all the h1 element
+console.log(document.querySelector(".qubais"))//for class we have to use like this
+console.log(document.querySelector("#id"))//for id we have to use like this
+document.querySelector("h1").innerText="javascript is best"
+document.querySelector("h1").textContent="javascript is the best programming and scripting language"

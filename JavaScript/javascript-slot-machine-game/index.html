@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript slot machine game</title>
+    <script async defer src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--spans are inline so we cant apply transoforms and translate on inline elements
+    you can  convert this into display blocks or display inline block of span
+    to apply animations or you can just convert them into divs that in bydefault block
+    -->
+    <div class="machine">
+        <div class="slot" id="slot1"><div class="value" id="value1">😂</div></div>
+        <div class="slot" id="slot2"><div class="value" id="value2">😇</div></div>
+        <div class="slot" id="slot3"><div class="value" id="value3">😍</div></div>
+    </div>
+    <h1>Choose below number to change the speed</h1>
+    <input id="iptS" type="number" min="1" max="10">
+</body>
+</html>

@@ -29,3 +29,34 @@ iptS.onchange = (event) => {
   root.style.setProperty("--speed", event.target.value);
   updateAnimation(event.target.value);
 };
+
+let btn=document.getElementById("btn")
+let value=document.getElementsByClassName("value")
+btn.onclick=()=>{
+  let arr=[];
+  for(let i=0;i<value.length;i++){
+    arr.push(value[i]);
+  }
+  for(let i of arr){
+    i.removeAttribute("class")
+  }
+  setTimeout(()=>{
+    
+  let slot=document.getElementsByClassName("slot");
+  let bool=true;
+  for(let i=0;i<slot.length-1;i++){
+    console.log(slot[i].textContent ," ", slot[i+1].textContent)
+    if(slot[i].textContent != slot[i+1].textContent){
+      bool=false;
+      break;
+    }
+  }
+  if(bool){
+    window.alert("You Won")
+    location.reload()
+  }else{
+    window.alert("You Lose")
+    location.reload()
+  }
+  },100)
+}

@@ -48,6 +48,7 @@ here below is the css local scope variable it can be acccess with
   margin-left: 30px;
   width: 100px;
 }
+
 @keyframes slotspin {
   0% {
     transform: translateY(-220px);

@@ -7,52 +7,52 @@ and then accessing using var function
 
 those css variables can be access by javascript
 */
-:root{
-    --speed:5;
+:root {
+  --speed: 5;
 }
 /*
 here below is the css local scope variable it can be acccess with 
 .class selector
 */
 
-.class{
-    --name:10;
+.class {
+  --name: 10;
 }
 
-.machine{
-    background-color: peru;
-    height: 300px;
-    width: 900px;
-    border: brown 3px;
-    display: flex;
-    margin: 50px;
+.machine {
+  background-color: peru;
+  height: 300px;
+  width: 900px;
+  border: brown 3px;
+  display: flex;
+  margin: 50px;
 }
-.slot{
-    height: 250px;
-    width: 250px;
-    margin: 20px;
-    background-color: beige;
-    border: solid darkblue 2px;
-    text-align: center;
-    font-size: 90pt;
-    line-height: 200px;
-    overflow: hidden;
+.slot {
+  height: 250px;
+  width: 250px;
+  margin: 20px;
+  background-color: beige;
+  border: solid darkblue 2px;
+  text-align: center;
+  font-size: 90pt;
+  line-height: 200px;
+  overflow: hidden;
 }
-.slot .value{
-    animation-name: slotspin;
-    animation-iteration-count: infinite;
-    animation-duration: calc(1s/(var(--speed)));
+.slot .value {
+  animation-name: slotspin;
+  animation-iteration-count: infinite;
+  animation-duration: calc(1s / (var(--speed)));
 }
-#iptS{
-    font-size: 30pt;
-    margin-left: 30px;
-    width: 100px;
+#iptS {
+  font-size: 30pt;
+  margin-left: 30px;
+  width: 100px;
 }
 @keyframes slotspin {
-    0%{
-        transform: translateY(-220px);
-    }
-    100%{
-        transform: translateY(220px);
-    }
+  0% {
+    transform: translateY(-220px);
+  }
+  100% {
+    transform: translateY(220px);
+  }
 }

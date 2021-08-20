@@ -1,0 +1,82 @@
+.container{
+    height: 154px;
+    width:154px;
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.box{
+    height: 50px;
+    width: 50px;
+    background-color: bisque
+}
+#box1{
+    border-right:solid gray 2px;
+    border-bottom:solid gray 2px;
+    transition: 0.7s;
+}
+#box1:hover{
+    transform: scale(2);
+}
+
+#box2{
+    border-right:solid gray 2px;
+    border-bottom:solid gray 2px;
+    transition: 0.7s;
+}
+
+#box2:hover{
+    transform: scale(2);
+}
+#box3{
+    border-bottom: solid gray 2px;
+    transition: 0.7s;
+}
+
+#box3:hover{
+    transform: scale(2);
+}
+#box4{
+    border-right:solid gray 2px;
+    border-bottom:solid gray 2px;
+    transition: 0.7s;
+}
+#box4:hover{
+    transform: scale(2);
+}
+#box5{
+    border-right:solid gray 2px;
+    border-bottom:solid gray 2px;
+    transition: 0.7s;
+}
+#box5:hover{
+    transform: scale(2);
+}
+#box6{
+    border-bottom: solid gray 2px;
+    transition: 0.7s;
+}
+#box6:hover{
+    transform: scale(2);
+}
+#box7{
+    border-right:solid gray 2px;
+    transition: 0.7s;
+}
+#box7:hover{
+    transform: scale(2);
+}
+#box8{
+    border-right:solid gray 2px;
+    transition: 0.7s;
+}
+#box8:hover{
+    transform: scale(2);
+}
+#box9{
+    transition: 0.7s;
+}
+#box9:hover{
+    transform: scale(2);
+}

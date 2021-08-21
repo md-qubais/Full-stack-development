@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Expressjs</title>
+</head>
+<body>
+    <!--by default forms uses get method
+    cannot post to /greet because there is no post method
+    //and the post request because server doest not contains
+    //post request
+    -->
+    <form action="./greet" method="POST">
+        <input name="person" type="text">
+        <input type="text">
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>

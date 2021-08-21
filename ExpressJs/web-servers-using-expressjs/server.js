@@ -70,3 +70,9 @@ app.get("/x",middleware1,middlewarae2)//here this is knonw as the middlewares st
 
 //generally only get will get triggerred as a user 
 //by default the get request or the get method will get execute
+
+//gnerally from tbhe browser url we can just invoke get method
+//only because we are just getting the particular url
+//thats the reason
+//if we wanted to inovke any anohter methods such than get than
+//we have to use post methods in the form of action and method=POST

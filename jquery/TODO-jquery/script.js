@@ -55,6 +55,9 @@ let add = () => {
   });
   task.append(li);
   newTask.val("");
+
+  btnAdd.prop("disabled", true);
+  btnresest.prop("disabled", true);
 };
 
 newTask[0].onkeypress = (e) => {

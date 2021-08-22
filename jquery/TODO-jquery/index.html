@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO jquery</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      async
+      defer
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script async defer src="./script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!--input elements-->
+      <h1 align="center">TODO List</h1>
+      <div class="row">
+        <div class="col">
+          <label for="newTask" class="form-label">Enter the Task</label>
+          <input
+            type="text"
+            class="form-control"
+            id="newTask"
+            placeholder="Task"
+          />
+          a short description of your task
+        </div>
+      </div>
+      <br />
+
+      <!--buttons-->
+      <button disabled id="btnadd" type="button" class="btn btn-success">
+        <i class="fas fa-plus"></i> Add
+      </button>
+      <button disabled id="btnclear" type="button" class="btn btn-danger">
+        <i class="fas fa-trash"></i> clear
+      </button>
+      <button disabled id="btnreset" type="button" class="btn btn-warning">
+        <i class="fas fa-arrow-left"></i> Reset
+      </button>
+      <button disabled id="btnsort" type="button" class="btn btn-info">
+        <i class="fas fa-sort-up"></i> sort
+      </button>
+      <button disabled id="btndone" type="button" class="btn btn-light">
+        <i class="fas fa-broom"></i> clear done
+      </button>
+      <!--task list-->
+      <ul class="list-group m-2" id="ultasks"></ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+/*  pixels are ficed they wont change even if we 
+minimze the tab
+it is proper absolute it wont change
+*/
+.one{
+    border: solid blue 1px;
+    height: 100px;
+    width: 100px;
+    background-color: darkcyan;
+}
+/*
+vh and vw
+are according to the screen size
+it will shrink and grow according to the view port
+
+it is relative units it can change accordiong to the size of viewport
+*/
+.two{
+    border: solid brown 1px;
+    height: 30vh;
+    width:30vw ;
+    background-color: darkgray;
+}
+
+
+/* 
+rem is also relative it is not proper relative 
+it will work on mobile phone better
+
+rem => p font size that is by default 16 px
+
+*/
+.three{
+    border: solid chartreuse 1px;
+    height: 10rem;
+    width: 10rem;
+    background-color: darkorange;
+}
+
+/*
+by default its  width 100%
+percentage will work on just the size of its paren 
+means 50% and 50% height and width measn
+adjust according to the parent
+*/
+.children{
+    background-color: darkred;
+    border: solid yellow 1px;
+    height: 50%;
+    width: 50%;
+}
+
+/* 
+by default every width will take the entire horizontal
+strip if its block element
+*/
+.four{
+    background-color: black;
+    height: 12vh;
+}
+.box{
+    height: 28vh;
+    width: 20vw;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+.upper{
+    height: 2vh;
+}
+
+.exampleid{
+    border: none;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+.description{
+    border: none;
+    background-color: white;
+    resize: none;
+    outline: none;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    margin-right: 3rem;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    line-height: 120%;
+    color: lightslategray;
+}
+
+
+

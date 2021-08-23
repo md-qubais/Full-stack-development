@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    background-color:snow;
+}
+li{
+    list-style: none;
+}
+.input-container{
+    height: 15vh;
+}
+.action{
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+/*
+margin:0 auto makes all the divs in center
+
+
+box-sizing:border-box;
+//only it will render the heigth and width
+//it removes the padding and border
+//because with the help of padding and border 
+//the size increases of the box 
+//it wont happen if we are using border-box
+
+*/
+.main-container{
+    font-family: 'Besley', serif;
+    color: bisque;
+    text-align: center;
+}
+.task-list{
+    padding-left: 0;
+}
+
+.task{
+    background-color: burlywood;
+    height: 2rem;
+    width: 70%;
+    margin: 0 auto;
+}

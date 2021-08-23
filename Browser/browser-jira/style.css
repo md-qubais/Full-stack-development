@@ -15,6 +15,22 @@ body{
     display:flex;
     align-items:center;
 }
+
+.displayall{
+    margin-left:5vw;
+    height: 4vw;
+    width: 8rem;
+    text-align: center;
+    padding-top: 2vh;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: #6d7c7e;
+    border-radius: 3%;
+}
+.displayall:hover{
+    background-color: darkgray;
+}
 .filter-container{
     height: 60%;
     width: 14rem;
@@ -165,7 +181,7 @@ than height will be automatically filled or width will be automatically filled
     margin-right: 3rem;
     font-size: 1.5rem;
     font-family: sans-serif;
-    line-height: 120%;
+    line-height: 100%;
     color: lightslategray;
 }
 
@@ -218,3 +234,106 @@ than height will be automatically filled or width will be automatically filled
 }
 
 }
+
+@media (max-width:600px) {
+        
+.toolbar{
+    height: 12vh;
+    background-color: #2d3436;
+    padding-left: 5rem;
+    display:flex;
+    align-items:center;
+}
+
+.modal_container{
+    position: absolute;
+    top: 25vh;
+    height: 50vh;
+    background-color: black;
+    width: 75vw;
+    left: 10vh;
+    display: flex;
+    display: none;
+}
+.box{
+    height: 10vh;
+    width: 15vw;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-top: 2.2rem;
+    margin-left: 2.2rem;
+}
+
+.upper{
+    height: 2vh;
+}
+
+.exampleid{
+    border: none;
+    font-family: sans-serif;
+    font-size: 0.5rem;
+}
+.description{
+    font-size: 0.5rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    
+}
+
+}
+
+@media (max-width:400px) {
+        
+    .toolbar{
+        height: 12vh;
+        background-color: #2d3436;
+        padding-left: 5rem;
+        display:flex;
+        align-items:center;
+    }
+    
+    .modal_container{
+        position: absolute;
+        top: 25vh;
+        height: 50vh;
+        background-color: black;
+        width: 75vw;
+        left: 10vh;
+        display: flex;
+        display: none;
+    }
+    .box{
+        height: 10vh;
+        width: 15vw;
+        background-color: bisque;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        margin-top: 2.2rem;
+        margin-left: 2.2rem;
+    }
+    
+    .upper{
+        height: 2vh;
+    }
+    
+    .exampleid{
+        border: none;
+        font-family: sans-serif;
+        font-size: 0.5rem;
+    }
+    .description{
+        font-size: 0.5rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        
+    }
+    
+.filter{
+    height: 40%;
+    width:10%;
+    margin-left: 5vw;
+}
+    }

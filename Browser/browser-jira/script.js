@@ -14,6 +14,7 @@ let displayall = document.querySelector(".displayall");
 let cColor = "black";
 let clearstorage = document.querySelector(".clearstorage");
 let cColorobj = modalFilters[modalFilters.length - 1];
+let landing=document.querySelector("#lander");
 let colors_array = ["pink", "blue", "black", "green"];
 let flag = false;
 let delete_state = false;
@@ -29,6 +30,19 @@ $( ".lock" ).click(function() {
     }
     text_disabled=!text_disabled
   });
+
+landing.addEventListener("click",()=>{
+  console.log("clicked")
+  let page=document.querySelector("#page");
+  let ticket=document.querySelector("#ticket");
+  page.style.display="none"
+  ticket.style.display="none"
+  landing.style.display="none";
+  mainContainer.style.display="flex";
+  let toolbar=document.querySelector(".toolbar")
+  toolbar.style.display="flex"
+
+})
 
 
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jira Ticket Management</title>
+    <script async defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -28,28 +29,49 @@
         <div class="filter filter-colors_container black"></div>
       </div>
       <div class="action-container">
-        <div class="action-container_icons  ">
-          <div class="add"><i style="padding-top: 2px;" class="fas fa-plus"></i></div>
+        <div class="action-container_icons">
+          <div class="add">
+            <i style="padding-top: 2px" class="fas fa-plus"></i>
+          </div>
         </div>
         <div class="action-container_icons">
-          <div class="remove"><i style="padding-top: 2px;" class="fas fa-times"></i></div>
+          <div class="remove">
+            <i style="padding-top: 2px" class="fas fa-times"></i>
+          </div>
         </div>
       </div>
-      
+
       <div class="action-container_icons">
         <div class="displayall">Display all</div>
       </div>
+      <div class="action-container_icons">
+        <div class="clearstorage">Clear Local Storage</div>
+      </div>
+      <div class="container">
+        <span class="lock"></span>
+      </div>
     </div>
     <div class="main-container">
+      <div class="app" style="margin-top: 200px">
+        <h3>You must open this web app in desktop</h3>
+      </div>
+
       <div class="modal_container box_shadow">
         <div class="modal_task_container">
-         <textarea placeholder="Enter the Task description" name="" id="" cols="30" rows="10" class="task_description"></textarea>
+          <textarea
+            placeholder="Enter the Task description"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            class="task_description"
+          ></textarea>
         </div>
-        <div class="modal_filter_container ">
-          <div class="modal_filters pink  "></div>
-          <div class="modal_filters blue  "></div>
-          <div class="modal_filters green  "></div>
-          <div class="modal_filters black border "></div>
+        <div class="modal_filter_container">
+          <div class="modal_filters pink"></div>
+          <div class="modal_filters blue"></div>
+          <div class="modal_filters green"></div>
+          <div class="modal_filters black border"></div>
         </div>
       </div>
     </div>

@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Excel-clone</title>
     <script async defer src="./script.js"></script>
     <script async defer src="./grid.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="menu-container">menu container</div>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script async defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <div class="menu-container">
+      <select class="font-size" name="" id="">
+        <option class="8">8</option>
+        <option class="10">10</option>
+        <option class="12">12</option>
+        <option class="16">16</option>
+      </select>
+      <select class="font-type" name="" id="">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="monoscope">monoscope</option>
+      </select>
+      <div class="button">
+        <i class="fa fa-bold bold" style="font-size:24px"></i>
+        <i class="fa fa-italic italic" style="font-size:24px"></i>
+        <i class="fa fa-underline underline" style="font-size:24px"></i>
+      </div>
+    </div>
     <div class="formula-container">
-        <input class="address-input" type="text">
-        <input class="formula-input" type="text">
+      <input class="address-input" type="text" />
+      <input placeholder="Formula here" class="formula-input" type="text" />
     </div>
     <div class="grid-container">
-        <div class="left_box box"></div>
-        <div class="top_row"></div>
-        <div class="left_col"></div>
-        <div class="grid"></div>
+      <div class="left_box box"></div>
+      <div class="top_row"></div>
+      <div class="left_col"></div>
+      <div class="grid"></div>
     </div>
     <div class="sheet-container">
-        <div class="add-sheet-btn-container">add</div>
-        <div class="sheet-list">
-            <div class="sheet active" idx="1">sheet1</div>
-        </div>
+      <div class="add-sheet-btn-container">add</div>
+      <div class="sheet-list">
+        <div class="sheet active" idx="1">sheet1</div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

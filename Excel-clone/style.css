@@ -7,8 +7,30 @@ body {
 }
 .menu-container {
   height: 4rem;
-
   border: solid red 0.1px;
+  align-items: center;
+  display: flex;
+  gap:2rem;
+}
+.menu-container  > *{
+  border: 1px solid;
+  height: 80%;
+  margin-left: 10px;
+}
+.font-size{
+  width: 5%;
+}
+.font-container{
+  width: 21%;
+}
+.bui-container{
+  width: 21%;
+}
+.align-container{
+  width: 14%;
+}
+.color-container{
+  width:10%;
 }
 .formula-container {
   height: 2rem;
@@ -112,6 +134,7 @@ body {
     border: 1px solid;
     text-align: center;
     height: 2rem;
+    overflow: auto;
 }
 .grid{
     background-color: white;
@@ -119,4 +142,24 @@ body {
 }
 .row{
     display: flex;
+}
+.font-size{
+  font-size: 20pt;
+}
+.font-type{
+  font-size: 20pt;
+}
+.button{
+  height: 70%;
+  width: 30%;
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+.bold,.italic,.underline{
+  margin-top: 7px;
+}
+.bold:hover,.italic:hover,.underline:hover{
+  transform: scale(1.5);
 }

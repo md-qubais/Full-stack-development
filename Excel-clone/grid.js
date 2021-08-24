@@ -1,6 +1,7 @@
 let left_col=document.querySelector(".left_col")
 let top_row=document.querySelector(".top_row");
 let grid=document.querySelector(".grid")
+let iptaddress=document.querySelector(".address-input")
 let rows=100;
 let cols=26
 
@@ -26,7 +27,15 @@ for(let i=0;i<rows;i++){
     for(let j=0;j<cols;j++){
         let cell=document.createElement("div");
         cell.setAttribute("class","cell");
-        cell.textContent=String.fromCharCode(65+j)
+        cell.setAttribute("rowid",i+1);
+        cell.setAttribute("colid",String.fromCharCode(65+j));
+        cell.setAttribute("contenteditable","true")
+        cell.addEventListener("click",()=>{
+            iptaddress.value=cell.getAttribute("colid")+cell.getAttribute("rowid")
+        })
+        if(i==0 && j==0){
+            cell.click()
+        }
         row.appendChild(cell);       
     }
     grid.appendChild(row)

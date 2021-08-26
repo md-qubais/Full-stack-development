@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound interest caculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script async defer src="./script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1 >Compound Intrest Calculator</h1>
+    </div>
+    <div class="calculator">
+        <div> <h1>Enter principal Amount : </h1><input type="number" name="" id="principal"> </div>
+        <div> <h1>Enter Rate of Interest : </h1><input type="number" name="" id="rate"> </div>
+        <div> <h1>Enter Number of years : </h1><input type="number" name="" id="years"> </div>
+        <div> <h1>Select Time period : </h1>
+            <select name="" id="time">
+                <option value="Yearly">Yearly</option>
+                <option value="Half Yearly">Half Yearly</option>
+                <option value="Quaterly">Quaterly</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+        </div>
+        <div><button id="btn">Calculate</button><input id="answer" disabled type="text"></div>
+    </div>
+</body>
+</html>

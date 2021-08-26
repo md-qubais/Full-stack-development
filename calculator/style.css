@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: bisque;
+}
+.header{
+    margin-left: 35%;
+    margin-top: 5%;
+}
+.calculator{
+    margin-left: 35%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+select{
+    font-size: 15pt;
+}
+input{
+    font-size: 15pt;
+}
+h1{
+    display: inline-block;
+}

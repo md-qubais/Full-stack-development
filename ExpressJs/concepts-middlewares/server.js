@@ -30,9 +30,6 @@ app.get("/",(req,res)=>{
     res.send("<h1>Hello world</h1>")
 })
 
-
-
-
 app.listen(3333,()=>{
     console.log("server started on http://localhost:3333")
 })

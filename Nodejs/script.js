@@ -96,5 +96,4 @@ function fun(){
     console.log(c);
 }
 fun()
-
 console.log(c);

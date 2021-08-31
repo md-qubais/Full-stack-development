@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+.video-container{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+.video{
+    height: 100%;
+    width: 100%;
+}
+.round-btn{
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    border-radius: 50%;
+    top: 30%;
+    right: 25px;
+}
+.pause{
+    top: 50%;
+}

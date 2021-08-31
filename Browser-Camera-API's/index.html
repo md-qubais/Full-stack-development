@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Camera</title>
+</head>
+<body>
+    <video controls autoplay></video>
+    <audio controls autoplay></audio> 
+    <button>Record</button>
+    <!--browser get camera and mic-->
+    <!--we are getting in the form of stream-->
+    <!--navigator is for browser apis-->
+    <!--fetching the apis-->
+
+    <!--aim audio video element feed-->
+    <!--aim record the current feed on press of record button and stop on press the button and start downloading-->
+    <script>
+        let constraints={
+            audio:true,video:true
+        }
+        let videoElem=document.querySelector("video");
+        let audioElem=document.querySelector("audio");
+        let recordbtn=document.querySelector("button");
+        // here the getusermedia return us the promise
+        // based on the promise is resolved or rejected
+        // and in resolved we get a stream
+        let recording=[];
+        let isrecording=false;
+        let ispaused=false;
+        let curr_recording;
+        recordbtn.onclick=()=>{
+            if(curr_recording == undefined){
+                alert("first give access to camera and microphone")
+                return;
+            }
+            if(!isrecording){
+                recordbtn.innerText="Recording...";
+                curr_recording.start();
+            }else{
+                recordbtn.innerText="Record";
+                curr_recording.stop();
+            }
+            isrecording= !isrecording;
+        }
+        let userMediaPrmoise=navigator.mediaDevices.getUserMedia(constraints)
+        userMediaPrmoise.then((stream)=>{
+             videoElem.srcObject=stream;
+             audioElem.srcObject=stream;
+            curr_recording=new MediaRecorder(stream);
+            curr_recording.ondataavailable=(e)=>{
+                console.log("pushing ",e);
+                recording.push(e.data);
+            }
+            // curr_recording.onstart=()=>{
+            //     alert("Recording started")
+            // }
+            //here we have to stop the recording and after stopping the recording 
+            //we have to download it
+            curr_recording.onstop=()=>{
+                const blob=new Blob(recording,{type:"video/mp4"})
+                const url=window.URL.createObjectURL(blob);
+                let a=document.createElement("a");
+                a.download="file-mp4"
+                a.href=url;
+                a.click();
+                recording=[]
+            }
+        }).catch((err)=>{
+            console.log(err);
+            alert("please allow both microphone and camera")
+        }) 
+        /*
+        using async await
+        async function MediaElements(){
+            try{
+                let stream= await navigator.mediaDevices.getUserMedia(constraints)
+                videoElem.srcObject=stream;
+                audioElem.srcObject=stream;
+            }catch(error){
+                alert("please allow both microphone and camera")
+            }
+        }
+        MediaElements()
+        */
+    </script>
+</body>
+</html>

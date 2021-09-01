@@ -13,11 +13,11 @@
       body {
         /* background-color: lightblue; */
       }
-      .color{
+      .color {
         height: 70%;
         width: 20%;
       }
-      .colors{
+      .colors {
         width: 88vw;
         height: 5rem;
         border: solid black 2px;
@@ -26,14 +26,26 @@
         justify-content: space-evenly;
         align-items: center;
       }
-      .red{
+      .red {
         background-color: red;
       }
-      .blue{
+      .blue {
         background-color: blue;
       }
-      .black{
+      .black {
         background-color: black;
+      }
+      .eraser {
+        background-color: whitesmoke;
+        text-align: center;
+        font-size: large;
+        padding-top: 1rem;
+      }
+      .download {
+        background-color: lightgray;
+        text-align: center;
+        font-size: large;
+        padding-top: 1rem;
       }
     </style>
   </head>
@@ -43,6 +55,8 @@
       <div class="red color"></div>
       <div class="blue color"></div>
       <div class="black color"></div>
+      <div class="color eraser">Eraser</div>
+      <div class="color download">download</div>
     </div>
 
     <canvas class="board"> </canvas>
@@ -50,51 +64,62 @@
       let board = document.querySelector(".board");
       let tool = board.getContext("2d");
       let rect = board.getBoundingClientRect();
-      let red=document.querySelector(".red")
-      let blue=document.querySelector(".blue")
-      let black=document.querySelector(".black")
-
-      red.addEventListener("click",()=>{
-
-        tool.strokeStyle="red";
-      })
-
-      blue.addEventListener("click",()=>{
-        tool.strokeStyle="blue";
-      })
-
-      black.addEventListener("click",()=>{
-        tool.strokeStyle="black";
-      })
+      let red = document.querySelector(".red");
+      let blue = document.querySelector(".blue");
+      let black = document.querySelector(".black");
+      let eraser = document.querySelector(".eraser");
+      let download = document.querySelector(".download");
+      download.addEventListener("click", () => {
+        let url = board.toDataURL();
+        let a = document.createElement("a");
+        a.download = "drawing.png";
+        a.href = url;
+        a.click();
+        a.remove();
+      });
+      eraser.addEventListener("click", () => {
+        tool.lineWidth = 20;
+        tool.strokeStyle = "white";
+      });
+      red.addEventListener("click", () => {
+        tool.lineWidth = 1;
+        tool.strokeStyle = "red";
+      });
+      blue.addEventListener("click", () => {
+        tool.lineWidth = 1;
+        tool.strokeStyle = "blue";
+      });
+      black.addEventListener("click", () => {
+        tool.lineWidth = 1;
+        tool.strokeStyle = "black";
+      });
       board.height = window.innerHeight;
       board.width = window.innerWidth;
-      let isMouseDown=false;
-      board.addEventListener("mousedown",(e)=>{
-        isMouseDown=true;
+      let isMouseDown = false;
+      board.addEventListener("mousedown", (e) => {
+        isMouseDown = true;
         tool.beginPath();
-        tool.moveTo( e.clientX -rect.left ,e.clientY -rect.top);
-        tool.lineWidth=1;
-      })
-      board.addEventListener("mousemove",(e)=>{
-        if(isMouseDown){
-          tool.lineTo(e.clientX -rect.left ,e.clientY -rect.top);
+        tool.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+        tool.lineWidth = 1;
+      });
+      board.addEventListener("mousemove", (e) => {
+        if (isMouseDown) {
+          tool.lineTo(e.clientX - rect.left, e.clientY - rect.top);
           tool.stroke();
         }
-      })
-      board.addEventListener("mouseup",(e)=>{
-        isMouseDown=false;
-        
-      })
-      
-      
+      });
+      board.addEventListener("mouseup", (e) => {
+        isMouseDown = false;
+      });
+
       tool.fillStyle = "white";
       tool.fillRect(0, 0, window.innerWidth, window.innerHeight);
-      
+
       // tool.moveTo(100,0);
       // tool.lineTo(100,100);//so where ever is the current
-      // //lineTo the x and y position will be replace that 
+      // //lineTo the x and y position will be replace that
       // //from moveTo axis to that lineTo axis
-      // tool.stroke()  
+      // tool.stroke()
       // tool.lineTo(200,100);
       // tool.stroke()
       //here we are using the fillstroke for designing the borders
@@ -103,7 +128,7 @@
       // tool.strokeRect(10, 10, window.innerWidth / 2, window.innerHeight / 2);
       // tool.fillStyle = "green";
       // tool.fillRect(40, 40, window.innerWidth / 2, window.innerHeight / 2);
-      // tool.beginPath();//new instance of the canvas 
+      // tool.beginPath();//new instance of the canvas
       // tool.lineWidth=2;
       // tool.strokeStyle="yellow";
       // tool.moveTo(50,50);
@@ -122,7 +147,6 @@
       // tool.moveTo(50,200);
       // tool.lineTo(50,300);
       // tool.stroke()
-
     </script>
   </body>
 </html>

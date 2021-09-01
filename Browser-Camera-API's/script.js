@@ -13,6 +13,10 @@ let videoElem = document.querySelector("video");
 let audioElem = document.querySelector("audio");
 let recordbtn = document.querySelector(".record");
 let pausebtn = document.querySelector(".pause");
+let capture = document.querySelector(".capture");
+let filter_overlay = document.querySelector(".filter_overlay");
+let filter_array = document.querySelectorAll(".filter");
+let curr_filter;
 // here the getusermedia return us the promise
 // based on the promise is resolved or rejected
 // and in resolved we get a stream
@@ -20,6 +24,33 @@ let recording = [];
 let isrecording = false;
 let ispaused = false;
 let curr_recording;
+for (let i = 0; i < filter_array.length; i++) {
+  filter_array[i].addEventListener("click", () => {
+    filter_overlay.style.backgroundColor =
+      filter_array[i].style.backgroundColor;
+    curr_filter = filter_overlay.style.backgroundColor;
+  });
+}
+capture.addEventListener("click", () => {
+  let canvas = document.createElement("canvas");
+  canvas.height = videoElem.videoHeight;
+  canvas.width = videoElem.videoWidth;
+  let tool = canvas.getContext("2d");
+  tool.drawImage(videoElem, 0, 0);
+  if (curr_filter) {
+    tool.fillStyle = curr_filter;
+    //from o,o to x,y  means ->left and down
+    tool.fillRect(0, 0, canvas.width, canvas.height);
+  }
+  //we have to draw the filter on image not image on filter
+  // tool.drawImage(videoElem,0,0);
+  let url = canvas.toDataURL();
+  let a = document.createElement("a");
+  a.href = url;
+  a.download = "file.png";
+  a.click();
+  a.remove();
+});
 recordbtn.onclick = () => {
   if (curr_recording == undefined) {
     alert("first give access to camera and microphone");

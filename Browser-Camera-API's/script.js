@@ -16,7 +16,10 @@ let pausebtn = document.querySelector(".pause");
 let capture = document.querySelector(".capture");
 let filter_overlay = document.querySelector(".filter_overlay");
 let filter_array = document.querySelectorAll(".filter");
+let timings = document.querySelector(".timing");
+let counter = 0;
 let curr_filter;
+let clearObj;
 // here the getusermedia return us the promise
 // based on the promise is resolved or rejected
 // and in resolved we get a stream
@@ -30,6 +33,26 @@ for (let i = 0; i < filter_array.length; i++) {
       filter_array[i].style.backgroundColor;
     curr_filter = filter_overlay.style.backgroundColor;
   });
+}
+function startTimer() {
+  timings.style.display = "block";
+  function fn() {
+    // hours
+    let hours = Number.parseInt(counter / 3600);
+    let RemSeconds = counter % 3600;
+    let mins = Number.parseInt(RemSeconds / 60);
+    let seconds = RemSeconds % 60;
+    hours = hours < 10 ? `0${hours}` : hours;
+    mins = mins < 10 ? `0${mins}` : `${mins}`;
+    seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    timings.innerText = `${hours}:${mins}:${seconds}`;
+    if (!ispaused) counter++;
+  }
+  clearObj = setInterval(fn, 1000);
+}
+function stopTimer() {
+  timings.style.display = "none";
+  clearInterval(clearObj);
 }
 capture.addEventListener("click", () => {
   let canvas = document.createElement("canvas");
@@ -51,6 +74,7 @@ capture.addEventListener("click", () => {
   a.click();
   a.remove();
 });
+
 recordbtn.onclick = () => {
   if (curr_recording == undefined) {
     alert("first give access to camera and microphone");
@@ -59,9 +83,13 @@ recordbtn.onclick = () => {
   if (!isrecording) {
     recordbtn.innerText = "Recording...";
     curr_recording.start();
+    startTimer();
+    recordbtn.style.animation = "bounce 1.5s ease-in-out  infinite";
   } else {
     recordbtn.innerText = "Record";
     curr_recording.stop();
+    recordbtn.style.animationName = "none";
+    stopTimer();
   }
   isrecording = !isrecording;
 };
@@ -73,9 +101,12 @@ pausebtn.onclick = () => {
   if (!ispaused) {
     curr_recording.pause();
     pausebtn.innerText = "Paused";
+
+    pausebtn.style.animation = "bounce 1.5s ease-in-out  infinite";
   } else {
     curr_recording.resume();
     pausebtn.innerText = "pause";
+    pausebtn.style.animation = "none";
   }
   ispaused = !ispaused;
 };

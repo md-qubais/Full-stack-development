@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+      }
+      body {
+        /* background-color: lightblue; */
+      }
+      .color{
+        height: 70%;
+        width: 20%;
+      }
+      .colors{
+        width: 88vw;
+        height: 5rem;
+        border: solid black 2px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .red{
+        background-color: red;
+      }
+      .blue{
+        background-color: blue;
+      }
+      .black{
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Canvas board</h1> -->
+    <div class="colors">
+      <div class="red color"></div>
+      <div class="blue color"></div>
+      <div class="black color"></div>
+    </div>
+
+    <canvas class="board"> </canvas>
+    <script>
+      let board = document.querySelector(".board");
+      let tool = board.getContext("2d");
+      let rect = board.getBoundingClientRect();
+      let red=document.querySelector(".red")
+      let blue=document.querySelector(".blue")
+      let black=document.querySelector(".black")
+
+      red.addEventListener("click",()=>{
+
+        tool.strokeStyle="red";
+      })
+
+      blue.addEventListener("click",()=>{
+        tool.strokeStyle="blue";
+      })
+
+      black.addEventListener("click",()=>{
+        tool.strokeStyle="black";
+      })
+      board.height = window.innerHeight;
+      board.width = window.innerWidth;
+      let isMouseDown=false;
+      board.addEventListener("mousedown",(e)=>{
+        isMouseDown=true;
+        tool.beginPath();
+        tool.moveTo( e.clientX -rect.left ,e.clientY -rect.top);
+        tool.lineWidth=1;
+      })
+      board.addEventListener("mousemove",(e)=>{
+        if(isMouseDown){
+          tool.lineTo(e.clientX -rect.left ,e.clientY -rect.top);
+          tool.stroke();
+        }
+      })
+      board.addEventListener("mouseup",(e)=>{
+        isMouseDown=false;
+        
+      })
+      
+      
+      tool.fillStyle = "white";
+      tool.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      
+      // tool.moveTo(100,0);
+      // tool.lineTo(100,100);//so where ever is the current
+      // //lineTo the x and y position will be replace that 
+      // //from moveTo axis to that lineTo axis
+      // tool.stroke()  
+      // tool.lineTo(200,100);
+      // tool.stroke()
+      //here we are using the fillstroke for designing the borders
+      // tool.strokeStyle = "brown";
+      // tool.lineWidth = 5;
+      // tool.strokeRect(10, 10, window.innerWidth / 2, window.innerHeight / 2);
+      // tool.fillStyle = "green";
+      // tool.fillRect(40, 40, window.innerWidth / 2, window.innerHeight / 2);
+      // tool.beginPath();//new instance of the canvas 
+      // tool.lineWidth=2;
+      // tool.strokeStyle="yellow";
+      // tool.moveTo(50,50);
+      // tool.lineTo(50,200);//draws a line from current x and y to this.x to this.y
+      // // tool.lineTo(-100,300)
+      // tool.stroke();
+
+      // tool.beginPath();//new instance of the line can change colors
+      // tool.lineWidth=4;
+      // tool.strokeStyle="orange"
+      // tool.moveTo(50,300);
+      // tool.lineTo(100,300);
+      // tool.stroke()//renders on the UI
+      // tool.beginPath();//new instance
+      // tool.strokeStyle="black"
+      // tool.moveTo(50,200);
+      // tool.lineTo(50,300);
+      // tool.stroke()
+
+    </script>
+  </body>
+</html>

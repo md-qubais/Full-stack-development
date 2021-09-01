@@ -17,8 +17,12 @@ let capture = document.querySelector(".capture");
 let filter_overlay = document.querySelector(".filter_overlay");
 let filter_array = document.querySelectorAll(".filter");
 let timings = document.querySelector(".timing");
+let plus = document.querySelector(".plus");
+let minus = document.querySelector(".minus");
 let counter = 0;
+let isvideopaused = false;
 let curr_filter;
+let scale = 1;
 let clearObj;
 // here the getusermedia return us the promise
 // based on the promise is resolved or rejected
@@ -27,6 +31,18 @@ let recording = [];
 let isrecording = false;
 let ispaused = false;
 let curr_recording;
+plus.addEventListener("click", () => {
+  if (scale < 2) {
+    scale += 0.1;
+    videoElem.style.transform = `scale(${scale})`;
+  }
+});
+minus.addEventListener("click", () => {
+  if (scale > 1) {
+    scale -= 0.1;
+    videoElem.style.transform = `scale(${scale})`;
+  }
+});
 for (let i = 0; i < filter_array.length; i++) {
   filter_array[i].addEventListener("click", () => {
     filter_overlay.style.backgroundColor =
@@ -59,7 +75,14 @@ capture.addEventListener("click", () => {
   canvas.height = videoElem.videoHeight;
   canvas.width = videoElem.videoWidth;
   let tool = canvas.getContext("2d");
-  tool.drawImage(videoElem, 0, 0);
+
+  //zoom in and zoom out before drawing the image on canas
+  tool.scale(scale, scale);
+  const x = (tool.canvas.width / scale - videoElem.videoWidth) / 2;
+  const y = (tool.canvas.height / scale - videoElem.videoHeight) / 2;
+  // console.log(x, y);
+  tool.drawImage(videoElem, x, y);
+  // tool.drawImage(videoElem, 0, 0);
   if (curr_filter) {
     tool.fillStyle = curr_filter;
     //from o,o to x,y  means ->left and down
@@ -67,6 +90,7 @@ capture.addEventListener("click", () => {
   }
   //we have to draw the filter on image not image on filter
   // tool.drawImage(videoElem,0,0);
+
   let url = canvas.toDataURL();
   let a = document.createElement("a");
   a.href = url;
@@ -80,6 +104,7 @@ recordbtn.onclick = () => {
     alert("first give access to camera and microphone");
     return;
   }
+
   if (!isrecording) {
     recordbtn.innerText = "Recording...";
     curr_recording.start();
@@ -93,20 +118,47 @@ recordbtn.onclick = () => {
   }
   isrecording = !isrecording;
 };
+
+let vidplay = () => {
+  videoElem.play();
+};
+let vidpause = () => {
+  videoElem.pause();
+};
+
 pausebtn.onclick = () => {
   if (curr_recording == undefined) {
     alert("first give access to camera and microphone");
     return;
   }
-  if (!ispaused) {
-    curr_recording.pause();
+  if (!isvideopaused) {
+    vidpause();
     pausebtn.innerText = "Paused";
-
     pausebtn.style.animation = "bounce 1.5s ease-in-out  infinite";
   } else {
-    curr_recording.resume();
-    pausebtn.innerText = "pause";
+    vidplay();
+    pausebtn.innerText = "Pause";
     pausebtn.style.animation = "none";
+  }
+  isvideopaused = !isvideopaused;
+  if (!ispaused) {
+    try {
+      curr_recording.pause();
+      pausebtn.innerText = "Paused";
+      pausebtn.style.animation = "bounce 1.5s ease-in-out  infinite";
+    } catch (err) {
+      //print error here or print nothing
+    }
+  } else {
+    //  vidplay();
+
+    try {
+      curr_recording.resume();
+      pausebtn.innerText = "pause";
+      pausebtn.style.animation = "none";
+    } catch (err) {
+      //print error here or print nothing
+    }
   }
   ispaused = !ispaused;
 };

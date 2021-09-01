@@ -55,6 +55,7 @@ body {
   left: 0px;
   top: 0px;
 }
+
 .filter_btn-container {
   height: 17rem;
   width: 7rem;
@@ -79,4 +80,25 @@ body {
   bottom: 17vh;
   left: 10vw;
   display: none;
+}
+.zoom-parent{
+  width: 2.75rem;
+  position: fixed;
+  top: 5%;
+  right: 45px;
+  border: 1px solid;
+  background-color: #444;
+  height: 6rem;
+  border-radius: 6px;
+}
+.zoom-parent > *{
+  height: 50%;
+  /* border-bottom: 1px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  font-size: 140%;
+  color:white;
 }

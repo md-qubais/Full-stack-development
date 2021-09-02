@@ -75,7 +75,6 @@ capture.addEventListener("click", () => {
   canvas.height = videoElem.videoHeight;
   canvas.width = videoElem.videoWidth;
   let tool = canvas.getContext("2d");
-
   //zoom in and zoom out before drawing the image on canas
   tool.scale(scale, scale);
   const x = (tool.canvas.width / scale - videoElem.videoWidth) / 2;

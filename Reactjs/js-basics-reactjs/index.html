@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactjs Intro</title>
+    <!-- ui highly optimized way -> manipulate  -->
+    <!-- algorithm -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- react through -> Dom change -->
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- bebel -> JSX-> js -->
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+      crossorigin
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //argumnet props its and object to get all the
+      //properties that we all are going to get from the another html
+      //attributes
+      function Hello(prop) {
+        return (
+            <React.Fragment>
+            <h1>
+              hello {prop.name} and {prop.greet}
+            </h1>
+          </React.Fragment>
+        )
+      }
+      function Hellos() {
+        return (
+          <React.Fragment>
+            <Hello name="mohammmed qubaisuddin" greet="good Morning" />
+            <Hello name="mohammmed imaduddin" greet="good Morning" />
+            <Hello name="mohammmed raqeeb" greet="good Morning" />
+            <Hello name="mohammmed hameed" greet="good Morning" />
+            <Hello name="mohammmed mansoor" greet="good Morning" />
+          </React.Fragment>
+        );
+      }
+      ReactDOM.render(<Hellos />,document.querySelector("#root"));
+    </script>
+  </body>
+</html>

@@ -1,29 +1,33 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { ChatEngine } from "react-chat-engine";
-import { auth } from "../firebase";
-import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
-const Chats = () => {
-  const history = useHistory();
+import React, { useContext, useEffect, useState } from "react";
+import { ChatEngine } from "react-chat-engine";
+import { useHistory } from "react-router-dom";
+import { AuthContext, useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase";
+
+export default function Chats() {
   const [loading, setLoading] = useState(true);
-  const { user } = useAuth();
+  const history = useHistory();
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   const handleLogout = async () => {
-    try {
-      let resp = await auth.signOut();
-      history.push("/");
-    } catch (error) {}
+    await auth.signOut();
+    history.push("/");
   };
+
   const getFile = async (url) => {
-    const response = await fetch(url);
-    const data = await response.blob();
-    return new File([data], "userPhoto.jpg", { type: "image/jpeg" });
+    let response = await fetch(url);
+    let img = await response.blob();
+    return new File([img], "media.jpg", { type: "image/jpeg" });
   };
+
   useEffect(() => {
-    if (!user) {
+    if (user === null) {
       history.push("/");
       return;
     }
+
     axios
       .get("https://api.chatengine.io/users/me", {
         headers: {
@@ -33,37 +37,34 @@ const Chats = () => {
         },
       })
       .then(() => {
-        console.log("loading false");
         setLoading(false);
       })
       .catch(() => {
         let formdata = new FormData();
         formdata.append("email", user.email);
-        formdata.append("username", user.displayName);
+        formdata.append("username", user.email);
         formdata.append("secret", user.uid);
-        getFile(user.photoURL)
-          .then((avatar) => {
-            formdata.append("avatar", avatar, avatar.name);
-            axios.post("https://api.chatengine.io/users/", formdata, {
-                headers: {
-                  "private-key" : "d2e1a4cd-25fa-404f-9340-cc94464f4e5b",
-                },
-              })
-              .then(() => {
-                setLoading(false);
-              })
-              .catch((error) => {
-                console.log("error here first");
-                console.log(error);
-              });
-          })
-          .catch((error) => {
-              console.log("error here second")
-              console.log(error)
-          });
+        getFile(user.photoURL).then((avatar) => {
+          formdata.append("avatar", avatar, avatar.name);
+
+          axios
+            .post("https://api.chatengine.io/users", formdata, {
+              headers: {
+                "private-key":"d2e1a4cd-25fa-404f-9340-cc94464f4e5b",
+              },
+            })
+            .then(() => {
+              setLoading(false);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
       });
-  }, [user, history]);
-  
+  });
+
+  if (!user || loading) return "loading...";
+
   return (
     <div className="chats-page">
       <div className="nav-bar">
@@ -73,12 +74,11 @@ const Chats = () => {
         </div>
       </div>
       <ChatEngine
-        height="calc(100vh-66px)"
+        height="100vh"
         projectID="47de05f9-69fa-4aae-9e61-6481f3f4e30e"
         userName={user.email}
         userSecret={user.uid}
       />
     </div>
   );
-};
-export default Chats;
+}

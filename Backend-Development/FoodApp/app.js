@@ -8,6 +8,7 @@ app.listen(port,function(){
 
 app.get("/",(req,res)=>{
     console.log("hello from page")
+    // res.send(`<h1>sending this useless</h1>`)
     res.send(`<h1>hello hi from backend </h1>`)
 })
 

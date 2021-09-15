@@ -6,11 +6,29 @@ app.listen(port,()=>{
     console.log("http://localhost:"+port)
 })
 
+//first execution from top to bottom
+//first it will execute becaus not routes
+//it matches to no rotues and executes
+//and then i am middleware executed 
+//and then next() calling to the next middleware function
+//and then it just goes to the next middleware
+app.use((req,res,next)=>{
+    // console.log("i am middleware");
+    next();//chalo mera kaam hogaya ab next wala middleware function aajao
+    //aur apna kaam karo
+})
+
 
 
 app.use(express.json())//send everything in the form of json
 //means frontend se joh bhi data araha hai usse json me update karo
 app.use(express.static("public"))
+
+app.use((req,res,next)=>{
+    // console.log("i am middleware 2")
+    next();
+})
+
 
 app.get("/",(req,res)=>{
     // console.log("home page")
@@ -128,3 +146,56 @@ app.use("/auth",AuthRouter);
 AuthRouter
 .route("/signup")
 .post(signup);
+
+
+//redirects
+app.get("/user-all",(req,res)=>{
+    console.log("redirection")
+    res.redirect("/user")
+})
+
+
+
+
+
+let UIforgetpassword=(req,res)=>{
+    res.sendFile("/public/forgetpassword.html",{root:__dirname})
+}
+let printemailandpassword=(req,res)=>{
+    let {name,email,password}=req.body;
+    console.log({name,email,password});
+    res.json({
+        message:"details printed",
+        user:{name,email,password},
+    })
+}
+
+const ForgetPassword=express.Router();
+app.use("/forgetpassword",ForgetPassword)
+ForgetPassword
+.route("/")
+.get(UIforgetpassword)
+.post(printemailandpassword)
+
+
+
+
+
+//if no route or route path matches then this middleware will gets executed
+app.use((req,res)=>{
+    res.sendFile("public/404.html",{root:__dirname})
+})//see what happens if we put this first
+//it will execute always if its first
+//because javascript nodejs is executed from top to bottom
+//first this get execute and response sent 
+//and then response is sent then there is no more responses will evaluated
+//so here middlewares with no path will gets executed anyways
+//so we have to use status protocols like 404 at last of the page
+
+// //redirects
+// app.get("/user-all",(req,res)=>{
+//     console.log("redirection")
+//     res.redirect("/user")
+// })
+//it wont work because we are writing this after 404 error app.use
+//because from top to bottom nothing found then that thing will execute

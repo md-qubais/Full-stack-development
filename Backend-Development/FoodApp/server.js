@@ -161,9 +161,14 @@ app.get("/user-all",(req,res)=>{
 let UIforgetpassword=(req,res)=>{
     res.sendFile("/public/forgetpassword.html",{root:__dirname})
 }
-let printemailandpassword=(req,res)=>{
+let printemailandpassword=(req,res,next)=>{
     let {name,email,password}=req.body;
     console.log({name,email,password});
+    next();
+}
+let validateEmail=(req,res)=>{
+    //validate email if the email contains @ and . com
+    let {name,email,password}=req.body
     res.json({
         message:"details printed",
         user:{name,email,password},
@@ -175,7 +180,7 @@ app.use("/forgetpassword",ForgetPassword)
 ForgetPassword
 .route("/")
 .get(UIforgetpassword)
-.post(printemailandpassword)
+.post(printemailandpassword,validateEmail)
 
 
 
